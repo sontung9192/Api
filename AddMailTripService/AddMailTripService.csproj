@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9A3C142-5F4D-4A6A-BB20-E33D3D43097B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AddMailTripService</RootNamespace>
+    <AssemblyName>AddMailTripService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ExchangeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service1.Designer.cs">
+      <DependentUpon>Service1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddBatchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddBC37Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddBC37_PDAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddCommodityTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddDeliveryPDAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddDeliveryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddDomesticFreightRuleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddInternationalFreightRuleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddItemTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddMailtripResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddMailtripTransportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddRevenueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddTraceItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddTracePostBagResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.AddValueAddedServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.BatchDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.BC37DataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.BD29DataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.CheckListItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.CODDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.CommodityTypeDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.ComparisonCODResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.CreateVNPUnitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.DeliveryDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.DeliveryRouteDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.DomesticFreightRuleDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetAcceptedItemListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetAffairByDateTimeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetAffairHuyCODResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetAllDeliveryRouteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetAllMailRouteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetAllMailTripEMS_StatisticResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetAllMailTripEMS_Statistic_DelayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetAllPOSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetAllUnitResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetBatchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetBC37ByBC37CodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetBC37EMSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetBC37Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetBC37V30Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetCountDeliveryEMSNotInBCCPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetCountMailTripBCCPNotInEMSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetCountMailTripEMSNewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetCountMailTripEMSNotInBCCPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetDataForSyncResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetDeliveryEMS_StatisticResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetDeliveryForRecheckHOST2TCTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetDeliveryItemListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetDeliveryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetDeliveryRouteForDeliveryAgainResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetEMSDeliveryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetListDeliveryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetListItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetListPosProvinceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetMailTripEMSNewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetMailTripEMSPOSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetMailTripEMSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetMailTripListEMSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetMailTripListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetMailTripResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetMailTripToPosInDayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetMailtripTransportByTransportCodeAndTransportDateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetMailtripTransportByTransportDateAndFromPOSCodeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetMailtripTransportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetMailTrip_StatisticResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetSchemaForSyncResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GetTracePostBagResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GPS_GetDispatchesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.GPS_GetIncompleteBD10sByVehicleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.ImportBD29AllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.INQUIRY_COD_INResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.INQUIRY_COD_OUTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.INQUIRY_COD_PAIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.INQUIRY_COD_RECEIVEDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.INQUIRY_PARCEL_INFOResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.INQUIRY_PARCEL_INFO_HSXTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.InternationalFreightRuleDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.ItemDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.ItemTypeDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.MailRouteDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.MailTripDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.MailTripListDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.MailTripTransportDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.Messages.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.OE_GetDataClientResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.PAYMENT_COD_INResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.PAYMENT_COD_OUTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.PayPostDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.PayPost_InquiryParcelInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.PayPost_RevertResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.PayPost_UpdatePaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.POSDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.PushDeliveryInfo1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.PushDeliveryInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.ReAddTraceItemFullResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.ReAddTraceItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.RecheckDeliveryEMS2HOSTAgainResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.RecheckDeliveryEMS2HOSTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.RecheckDeliveryHost2TCTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.RecheckEMSMailtripEMS2TCTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.RecheckEMSMailtripResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.RevenueDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.REVERT_CODResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.SaveAllMailtripEMS_StatisticResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.SaveBatchDeliveryPDAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.SaveBatchDeliveryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.SaveDeliveryEMS_StatisticResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.SetAffairHuyCodMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.SyncSchemaCategoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.SyncTableAndDeleteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.SyncTableResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.testResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.TraceItemDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.TracePostBagDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.UnitDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.UpdateBC37EMSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.UpdateEMSDeliveryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.UpdateMailTripEMSDataSetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.UpdateMailTripEMSGetedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.UpdateMailTripEMSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.UpdateTransferTimeEMSDeliveryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.UPDATE_ISSUE_RESULTResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\AddMailTripService.ExchangeService.ValueAddedServiceDataSet.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExchangeService\BatchDataSet.xsd" />
+    <None Include="Service References\ExchangeService\BC37DataSet.xsd" />
+    <None Include="Service References\ExchangeService\BD29DataSet.xsd" />
+    <None Include="Service References\ExchangeService\CODDataSet.xsd" />
+    <None Include="Service References\ExchangeService\CommodityTypeDataSet.xsd" />
+    <None Include="Service References\ExchangeService\DeliveryDataSet.xsd" />
+    <None Include="Service References\ExchangeService\DeliveryRouteDataSet.xsd" />
+    <None Include="Service References\ExchangeService\DomesticFreightRuleDataSet.xsd" />
+    <None Include="Service References\ExchangeService\ExchangeService.wsdl" />
+    <None Include="Service References\ExchangeService\InternationalFreightRuleDataSet.xsd" />
+    <None Include="Service References\ExchangeService\item.wsdl" />
+    <None Include="Service References\ExchangeService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\item5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExchangeService\ItemDataSet.xsd" />
+    <None Include="Service References\ExchangeService\ItemTypeDataSet.xsd" />
+    <None Include="Service References\ExchangeService\MailRouteDataSet.xsd" />
+    <None Include="Service References\ExchangeService\MailTripDataSet.xsd" />
+    <None Include="Service References\ExchangeService\MailTripListDataSet.xsd" />
+    <None Include="Service References\ExchangeService\MailTripTransportDataSet.xsd" />
+    <None Include="Service References\ExchangeService\PayPostDataSet.xsd" />
+    <None Include="Service References\ExchangeService\POSDataSet.xsd" />
+    <None Include="Service References\ExchangeService\RevenueDataSet.xsd" />
+    <None Include="Service References\ExchangeService\TraceItemDataSet.xsd" />
+    <None Include="Service References\ExchangeService\TracePostBagDataSet.xsd" />
+    <None Include="Service References\ExchangeService\UnitDataSet.xsd" />
+    <None Include="Service References\ExchangeService\ValueAddedServiceDataSet.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{cb4885ef-e57a-404a-89f6-e81fe9e89d04}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{b962d703-e489-412f-bb15-71429692c92f}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{c1d24abe-6983-422b-a1b1-a492a036652a}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ExchangeService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExchangeService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExchangeService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExchangeService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExchangeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

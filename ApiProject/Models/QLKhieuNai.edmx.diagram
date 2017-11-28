@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="da57a79068e84527900ffbc07d9f662b" Name="Diagram1">
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_BUUCUC" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_CHIEU" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_CHUCVU" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_CONGTHUC_CUOCBT" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_DICHVU" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_DICHVU_DB" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_KETLUAN" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_KETQUA" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_KHACHHANG" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_LOAIBT" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_LOAIDV" Width="1.5" PointX="11.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_LOAIHANG" Width="1.5" PointX="5.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_LYDOKN" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_MAU_THONGBAO_BT" Width="1.5" PointX="11.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_NUOC" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_PHONGBAN" Width="1.5" PointX="7.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_PHUONGTHUC" Width="1.5" PointX="9.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_PTTRALOI" Width="1.5" PointX="11.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_TINH_TP" Width="1.5" PointX="0.75" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_WEBKN" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DT_KHIEUNAI" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DT_KHIEUNAI_BOITHUONG" Width="1.5" PointX="13.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DT_KHIEUNAI_CHUYENTHU" Width="1.5" PointX="13.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DT_KHIEUNAI_TAM" Width="1.5" PointX="9.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DT_KHIEUNAI_TIENTRINH" Width="1.5" PointX="11.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DT_KHIEUNAI_USER" Width="1.5" PointX="5.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DT_NHOMTINH" Width="1.5" PointX="13.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.dtproperty" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.SYS_LOG" Width="1.5" PointX="2.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.SYS_LOG_TRUYENNHAN" Width="1.5" PointX="15.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.SYS_NGAY" Width="1.5" PointX="4.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.SYS_RIGHTS" Width="1.5" PointX="6.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.SYS_USER" Width="1.5" PointX="15.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.sysdiagram" Width="1.5" PointX="15.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.Test" Width="1.5" PointX="15.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.DM_MAU_QUYETDINH_BT" Width="1.5" PointX="17.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.SYS_RIGHTUSER" Width="1.5" PointX="17.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.BCNGOAINUOC" Width="1.5" PointX="17.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.BCTRONGNUOC" Width="1.5" PointX="17.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QL_KHIEUNAIModel.VIEW1" Width="1.5" PointX="2.75" PointY="18.75" IsExpanded="true" />
+        <AssociationConnector Association="QL_KHIEUNAIModel.FK_DT_KHIEUNAI_DM_CHIEU" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KHIEUNAIModel.FK_DT_KHIEUNAI_DM_DICHVU" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KHIEUNAIModel.FK_DT_KHIEUNAI_DM_LYDOKN" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KHIEUNAIModel.FK_DT_KHIEUNAI_DM_NUOC" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KHIEUNAIModel.FK_DT_KHIEUNAI_DM_TINH_TP" ManuallyRouted="false" />
+        <AssociationConnector Association="QL_KHIEUNAIModel.FK_DT_KHIEUNAI_USER_DT_KHIEUNAI" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

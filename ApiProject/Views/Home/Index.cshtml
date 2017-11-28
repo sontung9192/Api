@@ -1,0 +1,167 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<script>
+    // CHK : 0 chưa chuyển , 1 đang giải quyết , 2 : chưa giải quyết , 3; thành công rồi
+    $(document).ready(function () {
+        var data10 = {
+            MS_KHIEUNAI: "",
+            STTTINH: "70",
+            CHIEU: "1", // chiều đi
+            IDPTTL: "2", // 1: thu, 2 goi điện thoại , 3 Email, 4 fax
+            NGAYLAP: "",
+            HETHAN: "",
+            LOAIDV: "7", // hang hoa
+            DICHVU: "23", // ghi so
+            DICHVUDB: "",
+            SOHIEUBG: "ee1122332vn",
+            LYDOKN: "1", // chua nhan duoc
+            MUCDO: "2", // khẩn - 1: bình thường
+            FILEDK: "",
+            GHICHU: "Không có j đặc biệt",
+            NGUOIGOI: "Vũ Văn Tùng",
+            DCGOI: "102 Kim ngưu, Hai Bà trưng hà nội",
+            TINHGOI: "10",
+            NUOCGOI: "VN",
+            NGUOINHAN: "Vũ SƠN TÙNG",
+            DCNHAN: "Hà Đông",
+            TINHNHAN: "10",
+            NUOCNHAN: "VN",
+            BCGOI: "900100", // bưu cục nhận gửi trên giao diện
+            BCNHANKN: "900100", // bưu cục thụ lý trên giao diện
+            NGAYGOI: "2017-10-27",
+            KHOILUONG: "23.1",
+            PLNOIDUNG: "1",
+            NOIDUNG: "Thích thì khiếu nại thôi",
+            TRONGNUOC: "1",
+            NGUOIKN: "SƠN TÙNG ATM",
+            DIACHI: "102 Kim Ngưu, hà nội",
+            DTFAX: "01679950399",
+            EMAIL: "vantung.mdc@gmail.com",
+            NGUOINHAP: "763300",
+            NGAYNHAP: "",
+            PHONGBAN: "14",
+            LANKN: "",
+            CHK: "0",
+            HUYKN: "",
+            NGUOIHUY: "",
+            NGAYHUY: "",
+            CUOC: "7000",
+            THOIGIAN: "",
+            NGAYHH: "",
+            KNDACBIET: "",
+            NGAYHOANTHANH: "",
+            NGUYENNHAN: "",
+            KHLON: "",
+            KETLUAN: "",
+            NGAYKETLUAN: "",
+            HTVCHUYEN: "",
+            DATRUYEN: "",
+            NGAYGIOIHAN: "",
+            NGAYGIOIHANKH: "",
+            isKHL: "1",
+            isDACBIET: ""
+        };
+
+        callAjax('POST', '/api/khieunai/insert', data10);
+
+        //var data = {
+        //    Id: 0,
+        //    Names: "n6",
+        //    Status: 1
+        //};
+        //callAjax('POST', '/api/khieunai/insert', data);
+
+        // 1 chuyển khiếu nại user cho người thụ lý
+        var dataXLKN = {
+            MSKhieuNai: "7017000004",
+            IdKQ: "",
+            IdKL: "",
+            ThongTinTraoDoi: "test thôi",
+            ChiTietKetQua: "test thôi",
+            ChuyenThuTA: "",
+            NgayNhap: "",
+            NguoiNhap: "763300",
+            PathFile: "",
+            NgayHT: "",
+            NgayPhat: "",
+            MaNguoiThuLy: "HTKH1",
+            IdPhongBan: "18",
+            IdTinh: "",
+            MaNguoiThuLyTinh: "",
+            isHuyKN: "",
+            isHoanThanhKN: "",
+            isXLBoiThuongKN: "",
+            isKNDacBiet: "",
+            SoLanKN: "",
+            isXNChiBT: "",
+            isXNKhongChiBT: ""
+        };
+        //callAjax('POST', '/api/khieunai/xulykhieunai', dataXLKN);
+
+        // callAjax('POST', '/api/khieunai/getlistkhieunai', dataXLKN);
+        // danh sách khiếu nại từ ngày -  đến ngày
+        var data = {
+            FromDate: "2010-08-29 12:02:52.000",
+            ToDate: "2017-08-29 12:02:52.000",
+            CHK: "1",
+            UserName: "", //emscntt9192
+            NguoiNhap: '110130'
+        };
+        var urlapi = '/api/khieunai/getlistkhieunai?fromdate=' + data.FromDate + '&todate=' + data.ToDate + "&chk=" + data.CHK + "&nguoinhap=" + data.NguoiNhap + '&username=' + data.UserName;
+        callAjax('GET', urlapi, null);
+        // danh sách khiếu nại tiến trình từ ngày -  đến ngày
+        var data1 = {
+            FromDate: "2010-08-29 12:02:52.000",
+            ToDate: "2017-08-29 12:02:52.000",
+            UserName: "emscntt9192",
+            IDKhieuNai: '1011100750'
+        };
+        var urlapitientrinh = '/api/khieunai/getlistkhieunaitientrinh?fromdate=' + data1.FromDate + '&todate=' + data1.ToDate + "&username=" + data1.UserName + "&idkhieunai=" + data1.IDKhieuNai;
+        callAjax('GET', urlapitientrinh, null);
+
+        // dang sách user đăng nhập
+
+        var data2 = {
+            UserName: "Administrator",
+            Password: '8765'
+        };
+        callAjax('GET', '/api/khieunai/getlistuser?username=' + data2.UserName + '&password=' + data2.Password, null);
+
+        // callAjax('GET', '/api/test/list', data);
+
+        // dang sách khiếu nại user thụ lý mã số khiếu nại
+        var data3 = {
+            IdKhieuNai: "1011100750",
+            UserName: ''
+        };
+        callAjax('GET', '/api/khieunai/getlistkhieunaiuser?idkhieunai=' + data3.IdKhieuNai + '&username=' + data3.UserName, null);
+
+        callAjax('GET', '/api/khieunai/dstinhnhankhieunai?tinh=' + 70, null);
+        callAjax('GET', '/api/khieunai/dsnguoithulytinh?tinh=' + 70 + '&idkhieunai=' + 1011100750, null);
+        // login
+        var data4 = {
+            Password: "8765",
+            UserName: 'TRUNGCHUYEN'
+        };
+        callAjax('Post', '/api/ThongTin/Login', data4);
+    });
+    function callAjax(method, url, data) {
+        $.ajax({
+            url: url,
+            type: method,
+            //dataType: 'json',
+            data: data,
+            success: function (dataOut) {
+                console.log(dataOut)
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    }
+    // HTKH1 IndexOf("R18")
+    // 17000001
+</script>

@@ -1,0 +1,2835 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QL_KHIEUNAIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DM_BUUCUC">
+          <Key>
+            <PropertyRef Name="IDBC" />
+          </Key>
+          <Property Name="IDBC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SOHIEU" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENBC" Type="nvarchar" MaxLength="200" />
+          <Property Name="SODT" Type="nvarchar" MaxLength="250" />
+          <Property Name="SOFAX" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+          <Property Name="LOAIBC" Type="nvarchar" MaxLength="50" />
+          <Property Name="MABUUDIEN" Type="int" />
+        </EntityType>
+        <EntityType Name="DM_CHIEU">
+          <Key>
+            <PropertyRef Name="IDC" />
+          </Key>
+          <Property Name="IDC" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENCHIEU" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DM_CHUCVU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENCHUCVU" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DM_CONGTHUC_CUOCBT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STTTINH" Type="char" MaxLength="2" />
+          <Property Name="DICH_VU" Type="int" />
+          <Property Name="TRONG_NUOC" Type="char" MaxLength="1" />
+          <Property Name="KET_LUAN" Type="int" />
+          <Property Name="LOAI_BT" Type="int" />
+          <Property Name="A" Type="nvarchar" MaxLength="50" />
+          <Property Name="B" Type="nvarchar" MaxLength="100" />
+          <Property Name="MAB" Type="nvarchar" MaxLength="50" />
+          <Property Name="F" Type="int" />
+          <Property Name="TEN_LYDO_BT" Type="nvarchar" MaxLength="100" />
+          <Property Name="CHK" Type="nchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DM_DICHVU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENTAT" Type="nvarchar" MaxLength="5" />
+          <Property Name="TENDICHVU" Type="nvarchar" MaxLength="200" />
+          <Property Name="LOAIDV" Type="int" />
+          <Property Name="THOIGIAN" Type="int" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="DM_DICHVU_DB">
+          <Key>
+            <PropertyRef Name="IDDV" />
+          </Key>
+          <Property Name="IDDV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENDICHVU" Type="nvarchar" MaxLength="200" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DM_KETLUAN">
+          <Key>
+            <PropertyRef Name="IDKL" />
+          </Key>
+          <Property Name="IDKL" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENKL" Type="nvarchar" MaxLength="50" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DM_KETQUA">
+          <Key>
+            <PropertyRef Name="IDKQ" />
+          </Key>
+          <Property Name="IDKQ" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENKQ" Type="nvarchar" MaxLength="120" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DM_KHACHHANG">
+          <Key>
+            <PropertyRef Name="IDKH" />
+          </Key>
+          <Property Name="IDKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DONVI" Type="int" />
+          <Property Name="STTTINH" Type="char" MaxLength="2" />
+          <Property Name="MAKH" Type="nvarchar" MaxLength="20" />
+          <Property Name="TENTAT" Type="nvarchar" MaxLength="50" />
+          <Property Name="TENKH" Type="nvarchar" MaxLength="150" />
+          <Property Name="NGUOILH" Type="nvarchar" MaxLength="120" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="255" />
+          <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="500" />
+          <Property Name="LOAIKH" Type="char" MaxLength="1" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DM_LOAIBT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LYDO_BT" Type="nvarchar" MaxLength="100" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DM_LOAIDV">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENLOAI" Type="nvarchar" MaxLength="200" />
+          <Property Name="THUTU" Type="char" MaxLength="10" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DM_LOAIHANG">
+          <Key>
+            <PropertyRef Name="IDLH" />
+          </Key>
+          <Property Name="IDLH" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENLH" Type="nvarchar" MaxLength="50" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DM_LYDOKN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LYDO" Type="nvarchar" MaxLength="100" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_KHIEUNAI.dbo.DM_MAU_QUYETDINH_BT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DM_MAU_QUYETDINH_BT">
+          <Key>
+            <PropertyRef Name="MA" />
+          </Key>
+          <Property Name="MA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STTTINH" Type="char" MaxLength="2" />
+          <Property Name="DICH_VU" Type="int" />
+          <Property Name="TRONG_NUOC" Type="char" MaxLength="1" />
+          <Property Name="TEN_BD1" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEN_TP" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIEU_1" Type="nvarchar" MaxLength="250" />
+          <Property Name="DIEU_2" Type="nvarchar" MaxLength="250" />
+          <Property Name="TEN_TT" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEN_BD2" Type="nvarchar" MaxLength="50" />
+          <Property Name="MAU_BT" Type="char" MaxLength="1" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DM_MAU_THONGBAO_BT">
+          <Key>
+            <PropertyRef Name="MA" />
+          </Key>
+          <Property Name="MA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STTTINH" Type="char" MaxLength="2" />
+          <Property Name="LOAI_BT" Type="int" />
+          <Property Name="TRONG_NUOC" Type="char" MaxLength="1" />
+          <Property Name="TEN_BD1" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEN_BD2" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEN_TP" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIEU_1" Type="nvarchar" MaxLength="250" />
+          <Property Name="DIEU_2" Type="nvarchar" MaxLength="250" />
+          <Property Name="DIEU_3" Type="nvarchar" MaxLength="250" />
+          <Property Name="TEN_TT" Type="nvarchar" MaxLength="100" />
+          <Property Name="MAU_BT" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DM_NUOC">
+          <Key>
+            <PropertyRef Name="MA_NUOC" />
+          </Key>
+          <Property Name="MA_NUOC" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="TEN_NUOC" Type="nvarchar" MaxLength="100" />
+          <Property Name="MA_VUNG" Type="nvarchar" MaxLength="10" />
+          <Property Name="TEN_VUNG" Type="nvarchar" MaxLength="100" />
+          <Property Name="CACH_TINH_CUOC" Type="int" />
+          <Property Name="TY_LE_CUOC" Type="float" />
+          <Property Name="DON_VI_TIEN_TE" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="DM_PHONGBAN">
+          <Key>
+            <PropertyRef Name="MSPB" />
+          </Key>
+          <Property Name="MSPB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MSPBCU" Type="int" />
+          <Property Name="BUUDIEN" Type="char" MaxLength="2" />
+          <Property Name="TENPB" Type="nvarchar" MaxLength="200" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="250" />
+          <Property Name="STT" Type="int" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+          <Property Name="DAUMOI" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DM_PHUONGTHUC">
+          <Key>
+            <PropertyRef Name="IDPT" />
+          </Key>
+          <Property Name="IDPT" Type="smallint" Nullable="false" />
+          <Property Name="TENPT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DM_PTTRALOI">
+          <Key>
+            <PropertyRef Name="IDPT" />
+          </Key>
+          <Property Name="IDPT" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENPT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DM_TINH_TP">
+          <Key>
+            <PropertyRef Name="ID_Tinh_TP" />
+          </Key>
+          <Property Name="ID_Tinh_TP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STT_Tinh_TP" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Ten_Tinh_TP" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEN_BD" Type="nvarchar" MaxLength="50" />
+          <Property Name="IP_Tinh_TP" Type="nvarchar" MaxLength="15" />
+          <Property Name="Ma_vung_BK" Type="nvarchar" MaxLength="10" />
+          <Property Name="Ma_Vung_EMS" Type="nvarchar" MaxLength="10" />
+          <Property Name="MA_TT_KT" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="NHOM_TINH" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DM_WEBKN">
+          <Key>
+            <PropertyRef Name="IDWEB" />
+          </Key>
+          <Property Name="IDWEB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENWEB" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="DT_KHIEUNAI">
+          <Key>
+            <PropertyRef Name="MS_KHIEUNAI" />
+          </Key>
+          <Property Name="MS_KHIEUNAI" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="STTTINH" Type="char" MaxLength="2" />
+          <Property Name="CHIEU" Type="tinyint" />
+          <Property Name="IDPTTL" Type="smallint" />
+          <Property Name="NGAYLAP" Type="datetime" />
+          <Property Name="HETHAN" Type="datetime" />
+          <Property Name="LOAIDV" Type="int" />
+          <Property Name="DICHVU" Type="int" />
+          <Property Name="DICHVUDB" Type="nvarchar" MaxLength="150" />
+          <Property Name="SOHIEUBG" Type="nvarchar" MaxLength="13" />
+          <Property Name="LYDOKN" Type="int" />
+          <Property Name="MUCDO" Type="tinyint" />
+          <Property Name="FILEDK" Type="nvarchar" MaxLength="150" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="550" />
+          <Property Name="NGUOIGOI" Type="nvarchar" MaxLength="150" />
+          <Property Name="DCGOI" Type="nvarchar" MaxLength="300" />
+          <Property Name="TINHGOI" Type="int" />
+          <Property Name="NUOCGOI" Type="nvarchar" MaxLength="5" />
+          <Property Name="NGUOINHAN" Type="nvarchar" MaxLength="150" />
+          <Property Name="DCNHAN" Type="nvarchar" MaxLength="300" />
+          <Property Name="TINHNHAN" Type="int" />
+          <Property Name="NUOCNHAN" Type="nvarchar" MaxLength="5" />
+          <Property Name="BCGOI" Type="nvarchar" MaxLength="7" />
+          <Property Name="BCNHANKN" Type="nvarchar" MaxLength="17" />
+          <Property Name="NGAYGOI" Type="datetime" />
+          <Property Name="KHOILUONG" Type="real" />
+          <Property Name="PLNOIDUNG" Type="tinyint" />
+          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="250" />
+          <Property Name="TRONGNUOC" Type="tinyint" />
+          <Property Name="NGUOIKN" Type="nvarchar" MaxLength="150" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="300" />
+          <Property Name="DTFAX" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGUOINHAP" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYNHAP" Type="datetime" />
+          <Property Name="PHONGBAN" Type="nvarchar" MaxLength="5" />
+          <Property Name="LANKN" Type="smallint" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+          <Property Name="HUYKN" Type="char" MaxLength="1" />
+          <Property Name="NGUOIHUY" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYHUY" Type="datetime" />
+          <Property Name="CUOC" Type="int" />
+          <Property Name="THOIGIAN" Type="int" />
+          <Property Name="NGAYHH" Type="datetime" />
+          <Property Name="KNDACBIET" Type="char" MaxLength="1" />
+          <Property Name="NGAYHOANTHANH" Type="datetime" />
+          <Property Name="NGUYENNHAN" Type="int" />
+          <Property Name="KHLON" Type="nvarchar" MaxLength="20" />
+          <Property Name="KETLUAN" Type="int" />
+          <Property Name="NGAYKETLUAN" Type="datetime" />
+          <Property Name="HTVCHUYEN" Type="smallint" />
+          <Property Name="DATRUYEN" Type="char" MaxLength="1" />
+          <Property Name="NGAYGIOIHAN" Type="datetime" />
+          <Property Name="NGAYGIOIHANKH" Type="datetime" />
+          <Property Name="isKHL" Type="int" />
+          <Property Name="isDACBIET" Type="int" />
+        </EntityType>
+        <EntityType Name="DT_KHIEUNAI_BOITHUONG">
+          <Key>
+            <PropertyRef Name="IDBT" />
+          </Key>
+          <Property Name="IDBT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDKHIEUNAI" Type="nvarchar" MaxLength="10" />
+          <Property Name="NGUOIBT" Type="nvarchar" MaxLength="20" />
+          <Property Name="TRANGTHAI" Type="char" MaxLength="1" />
+          <Property Name="NGUOINHAP" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYNHAP" Type="datetime" />
+          <Property Name="LOAI_BT" Type="int" />
+          <Property Name="TIENHOANCUOC" Type="int" />
+          <Property Name="TIENBT" Type="int" />
+          <Property Name="BAOHIEM" Type="char" MaxLength="1" />
+          <Property Name="SOQDBOITHUONG" Type="nvarchar" MaxLength="50" />
+          <Property Name="SOTBBOITHUONG" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYKYBT" Type="datetime" />
+          <Property Name="FILEQDBT" Type="nvarchar" MaxLength="100" />
+          <Property Name="DA_CHI_BT" Type="char" MaxLength="1" />
+          <Property Name="SOQDTHUHOI" Type="nvarchar" MaxLength="50" />
+          <Property Name="SOTBTHUHOI" Type="nvarchar" MaxLength="50" />
+          <Property Name="FILEQDTH" Type="nvarchar" MaxLength="100" />
+          <Property Name="NGAYTHUHOI" Type="datetime" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+          <Property Name="NGUOI_CHI_TIEN" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DT_KHIEUNAI_CHUYENTHU">
+          <Key>
+            <PropertyRef Name="IDCTKN" />
+          </Key>
+          <Property Name="IDCTKN" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDKHIEUNAI" Type="nvarchar" MaxLength="10" />
+          <Property Name="BCGOC" Type="nvarchar" MaxLength="20" />
+          <Property Name="BCNHAN" Type="nvarchar" MaxLength="20" />
+          <Property Name="SOCT" Type="int" />
+          <Property Name="NGAYDONG" Type="datetime" />
+          <Property Name="SOTUI" Type="int" />
+          <Property Name="PHUONGTHUC" Type="int" />
+          <Property Name="DONG" Type="int" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="500" />
+          <Property Name="NGUOINHAP" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYNHAP" Type="datetime" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+          <Property Name="XOA" Type="char" MaxLength="1" />
+          <Property Name="DATRUYEN" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DT_KHIEUNAI_TAM">
+          <Key>
+            <PropertyRef Name="SOHIEUBG" />
+          </Key>
+          <Property Name="MS_KHIEUNAI" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STTTINH" Type="char" MaxLength="2" />
+          <Property Name="CHIEU" Type="tinyint" />
+          <Property Name="IDPTTL" Type="smallint" />
+          <Property Name="NGAYLAP" Type="datetime" />
+          <Property Name="HETHAN" Type="datetime" />
+          <Property Name="LOAIDV" Type="int" />
+          <Property Name="DICHVU" Type="int" />
+          <Property Name="DICHVUDB" Type="nvarchar" MaxLength="150" />
+          <Property Name="SOHIEUBG" Type="nvarchar" MaxLength="13" Nullable="false" />
+          <Property Name="LYDOKN" Type="int" />
+          <Property Name="MUCDO" Type="tinyint" />
+          <Property Name="FILEDK" Type="nvarchar" MaxLength="150" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="550" />
+          <Property Name="NGUOIGOI" Type="nvarchar" MaxLength="150" />
+          <Property Name="DCGOI" Type="nvarchar" MaxLength="300" />
+          <Property Name="TINHGOI" Type="int" />
+          <Property Name="NUOCGOI" Type="nvarchar" MaxLength="5" />
+          <Property Name="NGUOINHAN" Type="nvarchar" MaxLength="150" />
+          <Property Name="DCNHAN" Type="nvarchar" MaxLength="300" />
+          <Property Name="TINHNHAN" Type="int" />
+          <Property Name="NUOCNHAN" Type="nvarchar" MaxLength="5" />
+          <Property Name="BCGOI" Type="nvarchar" MaxLength="7" />
+          <Property Name="BCNHANKN" Type="nvarchar" MaxLength="17" />
+          <Property Name="NGAYGOI" Type="datetime" />
+          <Property Name="KHOILUONG" Type="real" />
+          <Property Name="PLNOIDUNG" Type="tinyint" />
+          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="250" />
+          <Property Name="TRONGNUOC" Type="tinyint" />
+          <Property Name="NGUOIKN" Type="nvarchar" MaxLength="150" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="300" />
+          <Property Name="DTFAX" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGUOINHAP" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYNHAP" Type="datetime" />
+          <Property Name="PHONGBAN" Type="nvarchar" MaxLength="5" />
+          <Property Name="LANKN" Type="smallint" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+          <Property Name="HUYKN" Type="char" MaxLength="1" />
+          <Property Name="NGUOIHUY" Type="int" />
+          <Property Name="NGAYHUY" Type="datetime" />
+          <Property Name="CUOC" Type="int" />
+          <Property Name="THOIGIAN" Type="int" />
+          <Property Name="NGAYHH" Type="datetime" />
+          <Property Name="KNDACBIET" Type="char" MaxLength="1" />
+          <Property Name="NGAYHOANTHANH" Type="datetime" />
+          <Property Name="NGUYENNHAN" Type="int" />
+          <Property Name="KHLON" Type="nvarchar" MaxLength="20" />
+          <Property Name="HTVCHUYEN" Type="smallint" />
+          <Property Name="NGAY_CT" Type="datetime" />
+          <Property Name="SOTUI" Type="int" />
+          <Property Name="SOCHUYEN" Type="int" />
+          <Property Name="BCGUI_BG" Type="nvarchar" MaxLength="10" />
+          <Property Name="BCNHAN_BG" Type="nvarchar" MaxLength="10" />
+          <Property Name="DATRUYEN" Type="char" MaxLength="1" />
+          <Property Name="ISKHL" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DT_KHIEUNAI_TIENTRINH">
+          <Key>
+            <PropertyRef Name="IDCTKN" />
+          </Key>
+          <Property Name="IDCTKN" Type="decimal" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDKHIEUNAI" Type="nvarchar" MaxLength="10" />
+          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="500" />
+          <Property Name="NOIDUNGTA" Type="nvarchar" MaxLength="500" />
+          <Property Name="NOIDUNGBC08" Type="nvarchar" MaxLength="500" />
+          <Property Name="NGAYCHUYEN" Type="datetime" />
+          <Property Name="NGAYPHAT" Type="datetime" />
+          <Property Name="FILEDK" Type="nvarchar" MaxLength="100" />
+          <Property Name="KETQUA" Type="int" />
+          <Property Name="NGUOINHAP" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYNHAP" Type="datetime" />
+          <Property Name="XULY" Type="char" MaxLength="1" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+          <Property Name="NGUOIXLYTIEP" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATRUYEN" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DT_KHIEUNAI_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="numeric" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDKHIEUNAI" Type="nvarchar" MaxLength="10" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PHONGBAN" Type="nvarchar" MaxLength="5" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+          <Property Name="USERTAO" Type="nvarchar" MaxLength="30" />
+          <Property Name="DATRUYEN" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="DT_NHOMTINH">
+          <Key>
+            <PropertyRef Name="ID_NHOMTINH" />
+          </Key>
+          <Property Name="ID_NHOMTINH" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="STTTINH" Type="char" MaxLength="2" />
+          <Property Name="TEN" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="dtproperties">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="property" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="objectid" Type="int" />
+          <Property Name="property" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="value" Type="varchar" MaxLength="255" />
+          <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+          <Property Name="lvalue" Type="image" />
+          <Property Name="version" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SYS_LOG">
+          <Key>
+            <PropertyRef Name="IDSYS" />
+          </Key>
+          <Property Name="IDSYS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="A" Type="nvarchar" MaxLength="50" />
+          <Property Name="B" Type="nvarchar" MaxLength="50" />
+          <Property Name="C" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SYS_LOG_TRUYENNHAN">
+          <Key>
+            <PropertyRef Name="IDKHIEUNAI" />
+          </Key>
+          <Property Name="IDKHIEUNAI" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="NGAY" Type="datetime" />
+          <Property Name="TRUYENDI" Type="char" MaxLength="2" />
+          <Property Name="NHANDEN" Type="char" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="SYS_NGAY">
+          <Key>
+            <PropertyRef Name="IDNGAY" />
+          </Key>
+          <Property Name="IDNGAY" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENNGAY" Type="nvarchar" MaxLength="150" />
+          <Property Name="NGAY" Type="datetime" />
+          <Property Name="THANG" Type="smallint" />
+          <Property Name="NAM" Type="smallint" />
+        </EntityType>
+        <EntityType Name="SYS_RIGHTS">
+          <Key>
+            <PropertyRef Name="MSQUYEN" />
+          </Key>
+          <Property Name="MSQUYEN" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="TENQUYEN" Type="nvarchar" MaxLength="100" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_KHIEUNAI.dbo.SYS_RIGHTUSER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SYS_RIGHTUSER">
+          <Key>
+            <PropertyRef Name="MSQUYEN" />
+          </Key>
+          <Property Name="MSQUYEN" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SYS_USER">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STTTINH" Type="smallint" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MATKHAU" Type="nvarchar" MaxLength="50" />
+          <Property Name="TENNV" Type="nvarchar" MaxLength="100" />
+          <Property Name="SODT" Type="nvarchar" MaxLength="20" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="500" />
+          <Property Name="PHONGBAN" Type="nvarchar" MaxLength="4" />
+          <Property Name="SHBUUCUC" Type="nvarchar" MaxLength="10" />
+          <Property Name="NGAYSINH" Type="datetime" />
+          <Property Name="NGUOINHAP" Type="nvarchar" MaxLength="50" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+          <Property Name="CHUCVU" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYNHAP" Type="datetime" />
+          <Property Name="CMND" Type="nvarchar" MaxLength="15" />
+          <Property Name="SHINNHATAN" Type="nvarchar" MaxLength="50" />
+          <Property Name="DAUMOI" Type="smallint" />
+          <Property Name="DAUMOINB" Type="smallint" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Names" Type="nchar" MaxLength="10" />
+          <Property Name="Datetime" Type="datetime" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_KHIEUNAI.dbo.BCNGOAINUOC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BCNGOAINUOC">
+          <Key>
+            <PropertyRef Name="MASO" />
+            <PropertyRef Name="IDC" />
+            <PropertyRef Name="IDDICHVU" />
+            <PropertyRef Name="IDLYDO" />
+            <PropertyRef Name="MA_NUOC" />
+          </Key>
+          <Property Name="TENCHIEU" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEN_NUOC" Type="nvarchar" MaxLength="100" />
+          <Property Name="MASO" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+          <Property Name="IDC" Type="smallint" Nullable="false" />
+          <Property Name="TENDICHVU" Type="nvarchar" MaxLength="200" />
+          <Property Name="IDDICHVU" Type="int" Nullable="false" />
+          <Property Name="NGAYLAP" Type="datetime" />
+          <Property Name="IDLYDO" Type="int" Nullable="false" />
+          <Property Name="LYDO" Type="nvarchar" MaxLength="100" />
+          <Property Name="NGAYHOANTHANH" Type="datetime" />
+          <Property Name="MA_NUOC" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="NGUOINHAP" Type="int" />
+          <Property Name="BCNHANKN" Type="nvarchar" MaxLength="17" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_KHIEUNAI.dbo.BCTRONGNUOC' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BCTRONGNUOC">
+          <Key>
+            <PropertyRef Name="MASO" />
+            <PropertyRef Name="IDC" />
+            <PropertyRef Name="IDDICHVU" />
+            <PropertyRef Name="IDLYDO" />
+            <PropertyRef Name="MA_NUOC" />
+          </Key>
+          <Property Name="TENCHIEU" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEN_NUOC" Type="nvarchar" MaxLength="100" />
+          <Property Name="MASO" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+          <Property Name="IDC" Type="smallint" Nullable="false" />
+          <Property Name="TENDICHVU" Type="nvarchar" MaxLength="200" />
+          <Property Name="IDDICHVU" Type="int" Nullable="false" />
+          <Property Name="NGAYLAP" Type="datetime" />
+          <Property Name="IDLYDO" Type="int" Nullable="false" />
+          <Property Name="LYDO" Type="nvarchar" MaxLength="100" />
+          <Property Name="NGAYHOANTHANH" Type="datetime" />
+          <Property Name="MA_NUOC" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="BCNHANKN" Type="nvarchar" MaxLength="17" />
+          <Property Name="NGUOINHAP" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'QL_KHIEUNAI.dbo.VIEW1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VIEW1">
+          <Key>
+            <PropertyRef Name="MS_KHIEUNAI" />
+          </Key>
+          <Property Name="MS_KHIEUNAI" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="NGAYLAP" Type="datetime" />
+          <Property Name="SOHIEUBG" Type="nvarchar" MaxLength="13" />
+          <Property Name="LYDO" Type="nvarchar" MaxLength="100" />
+          <Property Name="TENCHIEU" Type="nvarchar" MaxLength="50" />
+          <Property Name="FILEDK" Type="nvarchar" MaxLength="50" />
+          <Property Name="TENNV" Type="nvarchar" MaxLength="100" />
+          <Property Name="TENDICHVU" Type="nvarchar" MaxLength="200" />
+          <Property Name="MUCDO" Type="tinyint" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="250" />
+          <Property Name="NGUOIGOI" Type="nvarchar" MaxLength="50" />
+          <Property Name="DCGOI" Type="nvarchar" MaxLength="200" />
+          <Property Name="NGUOINHAN" Type="nvarchar" MaxLength="50" />
+          <Property Name="DCNHAN" Type="nvarchar" MaxLength="200" />
+          <Property Name="BCGOI" Type="nvarchar" MaxLength="7" />
+          <Property Name="BCNHAN" Type="nvarchar" MaxLength="7" />
+          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="250" />
+          <Property Name="NGAYGOI" Type="datetime" />
+          <Property Name="KHOILUONG" Type="real" />
+          <Property Name="TRONGNUOC" Type="tinyint" />
+          <Property Name="NGUOIKN" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="200" />
+          <Property Name="DTFAX" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="LANKN" Type="smallint" />
+          <Property Name="TINHNHAN" Type="nvarchar" MaxLength="50" />
+          <Property Name="NUOCNHAN" Type="nvarchar" MaxLength="100" />
+          <Property Name="TINHGOI" Type="nvarchar" MaxLength="50" />
+          <Property Name="NUOCGOI" Type="nvarchar" MaxLength="100" />
+          <Property Name="TENLH" Type="nvarchar" MaxLength="50" />
+          <Property Name="CHK" Type="char" MaxLength="1" />
+        </EntityType>
+        <Association Name="FK_DT_KHIEUNAI_DM_CHIEU">
+          <End Role="DM_CHIEU" Type="Self.DM_CHIEU" Multiplicity="0..1" />
+          <End Role="DT_KHIEUNAI" Type="Self.DT_KHIEUNAI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_CHIEU">
+              <PropertyRef Name="IDC" />
+            </Principal>
+            <Dependent Role="DT_KHIEUNAI">
+              <PropertyRef Name="CHIEU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_KHIEUNAI_DM_DICHVU">
+          <End Role="DM_DICHVU" Type="Self.DM_DICHVU" Multiplicity="0..1" />
+          <End Role="DT_KHIEUNAI" Type="Self.DT_KHIEUNAI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_DICHVU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DT_KHIEUNAI">
+              <PropertyRef Name="DICHVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_KHIEUNAI_DM_LYDOKN">
+          <End Role="DM_LYDOKN" Type="Self.DM_LYDOKN" Multiplicity="0..1" />
+          <End Role="DT_KHIEUNAI" Type="Self.DT_KHIEUNAI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_LYDOKN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DT_KHIEUNAI">
+              <PropertyRef Name="LYDOKN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_KHIEUNAI_DM_NUOC">
+          <End Role="DM_NUOC" Type="Self.DM_NUOC" Multiplicity="0..1" />
+          <End Role="DT_KHIEUNAI" Type="Self.DT_KHIEUNAI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_NUOC">
+              <PropertyRef Name="MA_NUOC" />
+            </Principal>
+            <Dependent Role="DT_KHIEUNAI">
+              <PropertyRef Name="NUOCNHAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_KHIEUNAI_DM_TINH_TP">
+          <End Role="DM_TINH_TP" Type="Self.DM_TINH_TP" Multiplicity="0..1" />
+          <End Role="DT_KHIEUNAI" Type="Self.DT_KHIEUNAI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_TINH_TP">
+              <PropertyRef Name="ID_Tinh_TP" />
+            </Principal>
+            <Dependent Role="DT_KHIEUNAI">
+              <PropertyRef Name="TINHNHAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_KHIEUNAI_USER_DT_KHIEUNAI">
+          <End Role="DT_KHIEUNAI" Type="Self.DT_KHIEUNAI" Multiplicity="0..1" />
+          <End Role="DT_KHIEUNAI_USER" Type="Self.DT_KHIEUNAI_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DT_KHIEUNAI">
+              <PropertyRef Name="MS_KHIEUNAI" />
+            </Principal>
+            <Dependent Role="DT_KHIEUNAI_USER">
+              <PropertyRef Name="IDKHIEUNAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="dt_addtosourcecontrol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vchSourceSafeINI" Type="varchar" Mode="In" />
+          <Parameter Name="vchProjectName" Type="varchar" Mode="In" />
+          <Parameter Name="vchComment" Type="varchar" Mode="In" />
+          <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
+          <Parameter Name="vchPassword" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="dt_addtosourcecontrol_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vchSourceSafeINI" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchProjectName" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchComment" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="dt_adduserobject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="dt_adduserobject_vcs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vchProperty" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="dt_checkinobject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="chObjectType" Type="char" Mode="In" />
+          <Parameter Name="vchObjectName" Type="varchar" Mode="In" />
+          <Parameter Name="vchComment" Type="varchar" Mode="In" />
+          <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
+          <Parameter Name="vchPassword" Type="varchar" Mode="In" />
+          <Parameter Name="iVCSFlags" Type="int" Mode="In" />
+          <Parameter Name="iActionFlag" Type="int" Mode="In" />
+          <Parameter Name="txStream1" Type="text" Mode="In" />
+          <Parameter Name="txStream2" Type="text" Mode="In" />
+          <Parameter Name="txStream3" Type="text" Mode="In" />
+        </Function>
+        <Function Name="dt_checkinobject_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="chObjectType" Type="char" Mode="In" />
+          <Parameter Name="vchObjectName" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchComment" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
+          <Parameter Name="iVCSFlags" Type="int" Mode="In" />
+          <Parameter Name="iActionFlag" Type="int" Mode="In" />
+          <Parameter Name="txStream1" Type="text" Mode="In" />
+          <Parameter Name="txStream2" Type="text" Mode="In" />
+          <Parameter Name="txStream3" Type="text" Mode="In" />
+        </Function>
+        <Function Name="dt_checkoutobject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="chObjectType" Type="char" Mode="In" />
+          <Parameter Name="vchObjectName" Type="varchar" Mode="In" />
+          <Parameter Name="vchComment" Type="varchar" Mode="In" />
+          <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
+          <Parameter Name="vchPassword" Type="varchar" Mode="In" />
+          <Parameter Name="iVCSFlags" Type="int" Mode="In" />
+          <Parameter Name="iActionFlag" Type="int" Mode="In" />
+        </Function>
+        <Function Name="dt_checkoutobject_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="chObjectType" Type="char" Mode="In" />
+          <Parameter Name="vchObjectName" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchComment" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
+          <Parameter Name="iVCSFlags" Type="int" Mode="In" />
+          <Parameter Name="iActionFlag" Type="int" Mode="In" />
+        </Function>
+        <Function Name="dt_displayoaerror" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="iObject" Type="int" Mode="In" />
+          <Parameter Name="iresult" Type="int" Mode="In" />
+        </Function>
+        <Function Name="dt_displayoaerror_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="iObject" Type="int" Mode="In" />
+          <Parameter Name="iresult" Type="int" Mode="In" />
+        </Function>
+        <Function Name="dt_droppropertiesbyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="property" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="dt_dropuserobjectbyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="dt_generateansiname" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="dt_getobjwithprop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="property" Type="varchar" Mode="In" />
+          <Parameter Name="value" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="dt_getobjwithprop_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="property" Type="varchar" Mode="In" />
+          <Parameter Name="uvalue" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="dt_getpropertiesbyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="property" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="dt_getpropertiesbyid_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="property" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="dt_getpropertiesbyid_vcs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="property" Type="varchar" Mode="In" />
+          <Parameter Name="value" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="dt_getpropertiesbyid_vcs_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="property" Type="varchar" Mode="In" />
+          <Parameter Name="value" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="dt_isundersourcecontrol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
+          <Parameter Name="vchPassword" Type="varchar" Mode="In" />
+          <Parameter Name="iWhoToo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="dt_isundersourcecontrol_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
+          <Parameter Name="iWhoToo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="dt_removefromsourcecontrol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="dt_setpropertybyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="property" Type="varchar" Mode="In" />
+          <Parameter Name="value" Type="varchar" Mode="In" />
+          <Parameter Name="lvalue" Type="image" Mode="In" />
+        </Function>
+        <Function Name="dt_setpropertybyid_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="property" Type="varchar" Mode="In" />
+          <Parameter Name="uvalue" Type="nvarchar" Mode="In" />
+          <Parameter Name="lvalue" Type="image" Mode="In" />
+        </Function>
+        <Function Name="dt_validateloginparams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
+          <Parameter Name="vchPassword" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="dt_validateloginparams_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="dt_vcsenabled" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="dt_verstamp006" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="dt_verstamp007" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="dt_whocheckedout" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="chObjectType" Type="char" Mode="In" />
+          <Parameter Name="vchObjectName" Type="varchar" Mode="In" />
+          <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
+          <Parameter Name="vchPassword" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="dt_whocheckedout_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="chObjectType" Type="char" Mode="In" />
+          <Parameter Name="vchObjectName" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
+          <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="TK_KN_BT_BCCP_CHUNG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CHIEU" Type="int" Mode="In" />
+          <Parameter Name="NGAY_BD" Type="nvarchar" Mode="In" />
+          <Parameter Name="NGAY_KT" Type="nvarchar" Mode="In" />
+          <Parameter Name="TINH" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TK_KN_BT_BCCP_DONVI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CHIEU" Type="int" Mode="In" />
+          <Parameter Name="NGAY_BD" Type="nvarchar" Mode="In" />
+          <Parameter Name="NGAY_KT" Type="nvarchar" Mode="In" />
+          <Parameter Name="TINH" Type="int" Mode="In" />
+        </Function>
+        <Function Name="TK_KN_CAC_DV_BCCP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CHIEU" Type="int" Mode="In" />
+          <Parameter Name="NGAY_BD" Type="nvarchar" Mode="In" />
+          <Parameter Name="NGAY_KT" Type="nvarchar" Mode="In" />
+          <Parameter Name="TINH" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="QL_KHIEUNAIModelStoreContainer">
+          <EntitySet Name="DM_BUUCUC" EntityType="Self.DM_BUUCUC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_CHIEU" EntityType="Self.DM_CHIEU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_CHUCVU" EntityType="Self.DM_CHUCVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_CONGTHUC_CUOCBT" EntityType="Self.DM_CONGTHUC_CUOCBT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_DICHVU" EntityType="Self.DM_DICHVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_DICHVU_DB" EntityType="Self.DM_DICHVU_DB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_KETLUAN" EntityType="Self.DM_KETLUAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_KETQUA" EntityType="Self.DM_KETQUA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_KHACHHANG" EntityType="Self.DM_KHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_LOAIBT" EntityType="Self.DM_LOAIBT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_LOAIDV" EntityType="Self.DM_LOAIDV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_LOAIHANG" EntityType="Self.DM_LOAIHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_LYDOKN" EntityType="Self.DM_LYDOKN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_MAU_THONGBAO_BT" EntityType="Self.DM_MAU_THONGBAO_BT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_NUOC" EntityType="Self.DM_NUOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_PHONGBAN" EntityType="Self.DM_PHONGBAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_PHUONGTHUC" EntityType="Self.DM_PHUONGTHUC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_PTTRALOI" EntityType="Self.DM_PTTRALOI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_TINH_TP" EntityType="Self.DM_TINH_TP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_WEBKN" EntityType="Self.DM_WEBKN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DT_KHIEUNAI" EntityType="Self.DT_KHIEUNAI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DT_KHIEUNAI_BOITHUONG" EntityType="Self.DT_KHIEUNAI_BOITHUONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DT_KHIEUNAI_CHUYENTHU" EntityType="Self.DT_KHIEUNAI_CHUYENTHU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DT_KHIEUNAI_TAM" EntityType="Self.DT_KHIEUNAI_TAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DT_KHIEUNAI_TIENTRINH" EntityType="Self.DT_KHIEUNAI_TIENTRINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DT_KHIEUNAI_USER" EntityType="Self.DT_KHIEUNAI_USER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DT_NHOMTINH" EntityType="Self.DT_NHOMTINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dtproperties" EntityType="Self.dtproperties" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYS_LOG" EntityType="Self.SYS_LOG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYS_LOG_TRUYENNHAN" EntityType="Self.SYS_LOG_TRUYENNHAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYS_NGAY" EntityType="Self.SYS_NGAY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYS_RIGHTS" EntityType="Self.SYS_RIGHTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYS_USER" EntityType="Self.SYS_USER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Test" EntityType="Self.Test" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_MAU_QUYETDINH_BT" EntityType="Self.DM_MAU_QUYETDINH_BT" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[DM_MAU_QUYETDINH_BT].[MA] AS [MA], 
+[DM_MAU_QUYETDINH_BT].[STTTINH] AS [STTTINH], 
+[DM_MAU_QUYETDINH_BT].[DICH_VU] AS [DICH_VU], 
+[DM_MAU_QUYETDINH_BT].[TRONG_NUOC] AS [TRONG_NUOC], 
+[DM_MAU_QUYETDINH_BT].[TEN_BD1] AS [TEN_BD1], 
+[DM_MAU_QUYETDINH_BT].[TEN_TP] AS [TEN_TP], 
+[DM_MAU_QUYETDINH_BT].[DIEU_1] AS [DIEU_1], 
+[DM_MAU_QUYETDINH_BT].[DIEU_2] AS [DIEU_2], 
+[DM_MAU_QUYETDINH_BT].[TEN_TT] AS [TEN_TT], 
+[DM_MAU_QUYETDINH_BT].[TEN_BD2] AS [TEN_BD2], 
+[DM_MAU_QUYETDINH_BT].[MAU_BT] AS [MAU_BT], 
+[DM_MAU_QUYETDINH_BT].[CHK] AS [CHK]
+FROM [dbo].[DM_MAU_QUYETDINH_BT] AS [DM_MAU_QUYETDINH_BT]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SYS_RIGHTUSER" EntityType="Self.SYS_RIGHTUSER" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[SYS_RIGHTUSER].[MSQUYEN] AS [MSQUYEN], 
+[SYS_RIGHTUSER].[USERNAME] AS [USERNAME]
+FROM [dbo].[SYS_RIGHTUSER] AS [SYS_RIGHTUSER]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BCNGOAINUOC" EntityType="Self.BCNGOAINUOC" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[BCNGOAINUOC].[TENCHIEU] AS [TENCHIEU], 
+[BCNGOAINUOC].[TEN_NUOC] AS [TEN_NUOC], 
+[BCNGOAINUOC].[MASO] AS [MASO], 
+[BCNGOAINUOC].[CHK] AS [CHK], 
+[BCNGOAINUOC].[IDC] AS [IDC], 
+[BCNGOAINUOC].[TENDICHVU] AS [TENDICHVU], 
+[BCNGOAINUOC].[IDDICHVU] AS [IDDICHVU], 
+[BCNGOAINUOC].[NGAYLAP] AS [NGAYLAP], 
+[BCNGOAINUOC].[IDLYDO] AS [IDLYDO], 
+[BCNGOAINUOC].[LYDO] AS [LYDO], 
+[BCNGOAINUOC].[NGAYHOANTHANH] AS [NGAYHOANTHANH], 
+[BCNGOAINUOC].[MA_NUOC] AS [MA_NUOC], 
+[BCNGOAINUOC].[NGUOINHAP] AS [NGUOINHAP], 
+[BCNGOAINUOC].[BCNHANKN] AS [BCNHANKN]
+FROM [dbo].[BCNGOAINUOC] AS [BCNGOAINUOC]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BCTRONGNUOC" EntityType="Self.BCTRONGNUOC" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[BCTRONGNUOC].[TENCHIEU] AS [TENCHIEU], 
+[BCTRONGNUOC].[TEN_NUOC] AS [TEN_NUOC], 
+[BCTRONGNUOC].[MASO] AS [MASO], 
+[BCTRONGNUOC].[CHK] AS [CHK], 
+[BCTRONGNUOC].[IDC] AS [IDC], 
+[BCTRONGNUOC].[TENDICHVU] AS [TENDICHVU], 
+[BCTRONGNUOC].[IDDICHVU] AS [IDDICHVU], 
+[BCTRONGNUOC].[NGAYLAP] AS [NGAYLAP], 
+[BCTRONGNUOC].[IDLYDO] AS [IDLYDO], 
+[BCTRONGNUOC].[LYDO] AS [LYDO], 
+[BCTRONGNUOC].[NGAYHOANTHANH] AS [NGAYHOANTHANH], 
+[BCTRONGNUOC].[MA_NUOC] AS [MA_NUOC], 
+[BCTRONGNUOC].[BCNHANKN] AS [BCNHANKN], 
+[BCTRONGNUOC].[NGUOINHAP] AS [NGUOINHAP]
+FROM [dbo].[BCTRONGNUOC] AS [BCTRONGNUOC]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VIEW1" EntityType="Self.VIEW1" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VIEW1].[MS_KHIEUNAI] AS [MS_KHIEUNAI], 
+[VIEW1].[NGAYLAP] AS [NGAYLAP], 
+[VIEW1].[SOHIEUBG] AS [SOHIEUBG], 
+[VIEW1].[LYDO] AS [LYDO], 
+[VIEW1].[TENCHIEU] AS [TENCHIEU], 
+[VIEW1].[FILEDK] AS [FILEDK], 
+[VIEW1].[TENNV] AS [TENNV], 
+[VIEW1].[TENDICHVU] AS [TENDICHVU], 
+[VIEW1].[MUCDO] AS [MUCDO], 
+[VIEW1].[GHICHU] AS [GHICHU], 
+[VIEW1].[NGUOIGOI] AS [NGUOIGOI], 
+[VIEW1].[DCGOI] AS [DCGOI], 
+[VIEW1].[NGUOINHAN] AS [NGUOINHAN], 
+[VIEW1].[DCNHAN] AS [DCNHAN], 
+[VIEW1].[BCGOI] AS [BCGOI], 
+[VIEW1].[BCNHAN] AS [BCNHAN], 
+[VIEW1].[NOIDUNG] AS [NOIDUNG], 
+[VIEW1].[NGAYGOI] AS [NGAYGOI], 
+[VIEW1].[KHOILUONG] AS [KHOILUONG], 
+[VIEW1].[TRONGNUOC] AS [TRONGNUOC], 
+[VIEW1].[NGUOIKN] AS [NGUOIKN], 
+[VIEW1].[DIACHI] AS [DIACHI], 
+[VIEW1].[DTFAX] AS [DTFAX], 
+[VIEW1].[EMAIL] AS [EMAIL], 
+[VIEW1].[LANKN] AS [LANKN], 
+[VIEW1].[TINHNHAN] AS [TINHNHAN], 
+[VIEW1].[NUOCNHAN] AS [NUOCNHAN], 
+[VIEW1].[TINHGOI] AS [TINHGOI], 
+[VIEW1].[NUOCGOI] AS [NUOCGOI], 
+[VIEW1].[TENLH] AS [TENLH], 
+[VIEW1].[CHK] AS [CHK]
+FROM [dbo].[VIEW1] AS [VIEW1]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_DT_KHIEUNAI_DM_CHIEU" Association="Self.FK_DT_KHIEUNAI_DM_CHIEU">
+            <End Role="DM_CHIEU" EntitySet="DM_CHIEU" />
+            <End Role="DT_KHIEUNAI" EntitySet="DT_KHIEUNAI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_KHIEUNAI_DM_DICHVU" Association="Self.FK_DT_KHIEUNAI_DM_DICHVU">
+            <End Role="DM_DICHVU" EntitySet="DM_DICHVU" />
+            <End Role="DT_KHIEUNAI" EntitySet="DT_KHIEUNAI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_KHIEUNAI_DM_LYDOKN" Association="Self.FK_DT_KHIEUNAI_DM_LYDOKN">
+            <End Role="DM_LYDOKN" EntitySet="DM_LYDOKN" />
+            <End Role="DT_KHIEUNAI" EntitySet="DT_KHIEUNAI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_KHIEUNAI_DM_NUOC" Association="Self.FK_DT_KHIEUNAI_DM_NUOC">
+            <End Role="DM_NUOC" EntitySet="DM_NUOC" />
+            <End Role="DT_KHIEUNAI" EntitySet="DT_KHIEUNAI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_KHIEUNAI_DM_TINH_TP" Association="Self.FK_DT_KHIEUNAI_DM_TINH_TP">
+            <End Role="DM_TINH_TP" EntitySet="DM_TINH_TP" />
+            <End Role="DT_KHIEUNAI" EntitySet="DT_KHIEUNAI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_KHIEUNAI_USER_DT_KHIEUNAI" Association="Self.FK_DT_KHIEUNAI_USER_DT_KHIEUNAI">
+            <End Role="DT_KHIEUNAI" EntitySet="DT_KHIEUNAI" />
+            <End Role="DT_KHIEUNAI_USER" EntitySet="DT_KHIEUNAI_USER" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QL_KHIEUNAIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DM_BUUCUC">
+          <Key>
+            <PropertyRef Name="IDBC" />
+          </Key>
+          <Property Name="IDBC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SOHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TENBC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SODT" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SOFAX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="LOAIBC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MABUUDIEN" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DM_CHIEU">
+          <Key>
+            <PropertyRef Name="IDC" />
+          </Key>
+          <Property Name="IDC" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENCHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DT_KHIEUNAI" Relationship="Self.FK_DT_KHIEUNAI_DM_CHIEU" FromRole="DM_CHIEU" ToRole="DT_KHIEUNAI" />
+        </EntityType>
+        <EntityType Name="DM_CHUCVU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENCHUCVU" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_CONGTHUC_CUOCBT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STTTINH" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="DICH_VU" Type="Int32" />
+          <Property Name="TRONG_NUOC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="KET_LUAN" Type="Int32" />
+          <Property Name="LOAI_BT" Type="Int32" />
+          <Property Name="A" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="B" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MAB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F" Type="Int32" />
+          <Property Name="TEN_LYDO_BT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_DICHVU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENTAT" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="TENDICHVU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="LOAIDV" Type="Int32" />
+          <Property Name="THOIGIAN" Type="Int32" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DT_KHIEUNAI" Relationship="Self.FK_DT_KHIEUNAI_DM_DICHVU" FromRole="DM_DICHVU" ToRole="DT_KHIEUNAI" />
+        </EntityType>
+        <EntityType Name="DM_DICHVU_DB">
+          <Key>
+            <PropertyRef Name="IDDV" />
+          </Key>
+          <Property Name="IDDV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENDICHVU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DM_KETLUAN">
+          <Key>
+            <PropertyRef Name="IDKL" />
+          </Key>
+          <Property Name="IDKL" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENKL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DM_KETQUA">
+          <Key>
+            <PropertyRef Name="IDKQ" />
+          </Key>
+          <Property Name="IDKQ" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENKQ" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DM_KHACHHANG">
+          <Key>
+            <PropertyRef Name="IDKH" />
+          </Key>
+          <Property Name="IDKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DONVI" Type="Int32" />
+          <Property Name="STTTINH" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="MAKH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TENTAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENKH" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOILH" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DIENTHOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LOAIKH" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DM_LOAIBT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LYDO_BT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DM_LOAIDV">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENLOAI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="THUTU" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DM_LOAIHANG">
+          <Key>
+            <PropertyRef Name="IDLH" />
+          </Key>
+          <Property Name="IDLH" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENLH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DM_LYDOKN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LYDO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="DT_KHIEUNAI" Relationship="Self.FK_DT_KHIEUNAI_DM_LYDOKN" FromRole="DM_LYDOKN" ToRole="DT_KHIEUNAI" />
+        </EntityType>
+        <EntityType Name="DM_MAU_THONGBAO_BT">
+          <Key>
+            <PropertyRef Name="MA" />
+          </Key>
+          <Property Name="MA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STTTINH" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="LOAI_BT" Type="Int32" />
+          <Property Name="TRONG_NUOC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="TEN_BD1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_BD2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_TP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIEU_1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DIEU_2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DIEU_3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_TT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MAU_BT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DM_NUOC">
+          <Key>
+            <PropertyRef Name="MA_NUOC" />
+          </Key>
+          <Property Name="MA_NUOC" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TEN_NUOC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MA_VUNG" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_VUNG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CACH_TINH_CUOC" Type="Int32" />
+          <Property Name="TY_LE_CUOC" Type="Double" />
+          <Property Name="DON_VI_TIEN_TE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DT_KHIEUNAI" Relationship="Self.FK_DT_KHIEUNAI_DM_NUOC" FromRole="DM_NUOC" ToRole="DT_KHIEUNAI" />
+        </EntityType>
+        <EntityType Name="DM_PHONGBAN">
+          <Key>
+            <PropertyRef Name="MSPB" />
+          </Key>
+          <Property Name="MSPB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MSPBCU" Type="Int32" />
+          <Property Name="BUUDIEN" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="TENPB" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GHICHU" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="STT" Type="Int32" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DAUMOI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DM_PHUONGTHUC">
+          <Key>
+            <PropertyRef Name="IDPT" />
+          </Key>
+          <Property Name="IDPT" Type="Int16" Nullable="false" />
+          <Property Name="TENPT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_PTTRALOI">
+          <Key>
+            <PropertyRef Name="IDPT" />
+          </Key>
+          <Property Name="IDPT" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENPT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DM_TINH_TP">
+          <Key>
+            <PropertyRef Name="ID_Tinh_TP" />
+          </Key>
+          <Property Name="ID_Tinh_TP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STT_Tinh_TP" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Ten_Tinh_TP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_BD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IP_Tinh_TP" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Ma_vung_BK" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Ma_Vung_EMS" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MA_TT_KT" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="NHOM_TINH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DT_KHIEUNAI" Relationship="Self.FK_DT_KHIEUNAI_DM_TINH_TP" FromRole="DM_TINH_TP" ToRole="DT_KHIEUNAI" />
+        </EntityType>
+        <EntityType Name="DM_WEBKN">
+          <Key>
+            <PropertyRef Name="IDWEB" />
+          </Key>
+          <Property Name="IDWEB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENWEB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DT_KHIEUNAI">
+          <Key>
+            <PropertyRef Name="MS_KHIEUNAI" />
+          </Key>
+          <Property Name="MS_KHIEUNAI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STTTINH" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="CHIEU" Type="Byte" />
+          <Property Name="IDPTTL" Type="Int16" />
+          <Property Name="NGAYLAP" Type="DateTime" Precision="3" />
+          <Property Name="HETHAN" Type="DateTime" Precision="3" />
+          <Property Name="LOAIDV" Type="Int32" />
+          <Property Name="DICHVU" Type="Int32" />
+          <Property Name="DICHVUDB" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SOHIEUBG" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="LYDOKN" Type="Int32" />
+          <Property Name="MUCDO" Type="Byte" />
+          <Property Name="FILEDK" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="GHICHU" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOIGOI" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DCGOI" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="TINHGOI" Type="Int32" />
+          <Property Name="NUOCGOI" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOINHAN" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DCNHAN" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="TINHNHAN" Type="Int32" />
+          <Property Name="NUOCNHAN" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="BCGOI" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="BCNHANKN" Type="String" MaxLength="17" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYGOI" Type="DateTime" Precision="3" />
+          <Property Name="KHOILUONG" Type="Single" />
+          <Property Name="PLNOIDUNG" Type="Byte" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TRONGNUOC" Type="Byte" />
+          <Property Name="NGUOIKN" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="DTFAX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOINHAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYNHAP" Type="DateTime" Precision="3" />
+          <Property Name="PHONGBAN" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="LANKN" Type="Int16" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="HUYKN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NGUOIHUY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYHUY" Type="DateTime" Precision="3" />
+          <Property Name="CUOC" Type="Int32" />
+          <Property Name="THOIGIAN" Type="Int32" />
+          <Property Name="NGAYHH" Type="DateTime" Precision="3" />
+          <Property Name="KNDACBIET" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NGAYHOANTHANH" Type="DateTime" Precision="3" />
+          <Property Name="NGUYENNHAN" Type="Int32" />
+          <Property Name="KHLON" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="KETLUAN" Type="Int32" />
+          <Property Name="NGAYKETLUAN" Type="DateTime" Precision="3" />
+          <Property Name="HTVCHUYEN" Type="Int16" />
+          <Property Name="DATRUYEN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NGAYGIOIHAN" Type="DateTime" Precision="3" />
+          <Property Name="NGAYGIOIHANKH" Type="DateTime" Precision="3" />
+          <Property Name="isKHL" Type="Int32" />
+          <Property Name="isDACBIET" Type="Int32" />
+          <NavigationProperty Name="DM_CHIEU" Relationship="Self.FK_DT_KHIEUNAI_DM_CHIEU" FromRole="DT_KHIEUNAI" ToRole="DM_CHIEU" />
+          <NavigationProperty Name="DM_DICHVU" Relationship="Self.FK_DT_KHIEUNAI_DM_DICHVU" FromRole="DT_KHIEUNAI" ToRole="DM_DICHVU" />
+          <NavigationProperty Name="DM_LYDOKN" Relationship="Self.FK_DT_KHIEUNAI_DM_LYDOKN" FromRole="DT_KHIEUNAI" ToRole="DM_LYDOKN" />
+          <NavigationProperty Name="DM_NUOC" Relationship="Self.FK_DT_KHIEUNAI_DM_NUOC" FromRole="DT_KHIEUNAI" ToRole="DM_NUOC" />
+          <NavigationProperty Name="DM_TINH_TP" Relationship="Self.FK_DT_KHIEUNAI_DM_TINH_TP" FromRole="DT_KHIEUNAI" ToRole="DM_TINH_TP" />
+          <NavigationProperty Name="DT_KHIEUNAI_USER" Relationship="Self.FK_DT_KHIEUNAI_USER_DT_KHIEUNAI" FromRole="DT_KHIEUNAI" ToRole="DT_KHIEUNAI_USER" />
+        </EntityType>
+        <EntityType Name="DT_KHIEUNAI_BOITHUONG">
+          <Key>
+            <PropertyRef Name="IDBT" />
+          </Key>
+          <Property Name="IDBT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDKHIEUNAI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOIBT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TRANGTHAI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NGUOINHAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYNHAP" Type="DateTime" Precision="3" />
+          <Property Name="LOAI_BT" Type="Int32" />
+          <Property Name="TIENHOANCUOC" Type="Int32" />
+          <Property Name="TIENBT" Type="Int32" />
+          <Property Name="BAOHIEM" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="SOQDBOITHUONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SOTBBOITHUONG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYKYBT" Type="DateTime" Precision="3" />
+          <Property Name="FILEQDBT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DA_CHI_BT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="SOQDTHUHOI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SOTBTHUHOI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FILEQDTH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYTHUHOI" Type="DateTime" Precision="3" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NGUOI_CHI_TIEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DT_KHIEUNAI_CHUYENTHU">
+          <Key>
+            <PropertyRef Name="IDCTKN" />
+          </Key>
+          <Property Name="IDCTKN" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDKHIEUNAI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BCGOC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="BCNHAN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SOCT" Type="Int32" />
+          <Property Name="NGAYDONG" Type="DateTime" Precision="3" />
+          <Property Name="SOTUI" Type="Int32" />
+          <Property Name="PHUONGTHUC" Type="Int32" />
+          <Property Name="DONG" Type="Int32" />
+          <Property Name="GHICHU" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOINHAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYNHAP" Type="DateTime" Precision="3" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="XOA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DATRUYEN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DT_KHIEUNAI_TAM">
+          <Key>
+            <PropertyRef Name="SOHIEUBG" />
+          </Key>
+          <Property Name="MS_KHIEUNAI" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STTTINH" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="CHIEU" Type="Byte" />
+          <Property Name="IDPTTL" Type="Int16" />
+          <Property Name="NGAYLAP" Type="DateTime" Precision="3" />
+          <Property Name="HETHAN" Type="DateTime" Precision="3" />
+          <Property Name="LOAIDV" Type="Int32" />
+          <Property Name="DICHVU" Type="Int32" />
+          <Property Name="DICHVUDB" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SOHIEUBG" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LYDOKN" Type="Int32" />
+          <Property Name="MUCDO" Type="Byte" />
+          <Property Name="FILEDK" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="GHICHU" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOIGOI" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DCGOI" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="TINHGOI" Type="Int32" />
+          <Property Name="NUOCGOI" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOINHAN" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DCNHAN" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="TINHNHAN" Type="Int32" />
+          <Property Name="NUOCNHAN" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="BCGOI" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="BCNHANKN" Type="String" MaxLength="17" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYGOI" Type="DateTime" Precision="3" />
+          <Property Name="KHOILUONG" Type="Single" />
+          <Property Name="PLNOIDUNG" Type="Byte" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TRONGNUOC" Type="Byte" />
+          <Property Name="NGUOIKN" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="DTFAX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOINHAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYNHAP" Type="DateTime" Precision="3" />
+          <Property Name="PHONGBAN" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="LANKN" Type="Int16" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="HUYKN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NGUOIHUY" Type="Int32" />
+          <Property Name="NGAYHUY" Type="DateTime" Precision="3" />
+          <Property Name="CUOC" Type="Int32" />
+          <Property Name="THOIGIAN" Type="Int32" />
+          <Property Name="NGAYHH" Type="DateTime" Precision="3" />
+          <Property Name="KNDACBIET" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NGAYHOANTHANH" Type="DateTime" Precision="3" />
+          <Property Name="NGUYENNHAN" Type="Int32" />
+          <Property Name="KHLON" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="HTVCHUYEN" Type="Int16" />
+          <Property Name="NGAY_CT" Type="DateTime" Precision="3" />
+          <Property Name="SOTUI" Type="Int32" />
+          <Property Name="SOCHUYEN" Type="Int32" />
+          <Property Name="BCGUI_BG" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BCNHAN_BG" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DATRUYEN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ISKHL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DT_KHIEUNAI_TIENTRINH">
+          <Key>
+            <PropertyRef Name="IDCTKN" />
+          </Key>
+          <Property Name="IDCTKN" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDKHIEUNAI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NOIDUNGTA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NOIDUNGBC08" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYCHUYEN" Type="DateTime" Precision="3" />
+          <Property Name="NGAYPHAT" Type="DateTime" Precision="3" />
+          <Property Name="FILEDK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KETQUA" Type="Int32" />
+          <Property Name="NGUOINHAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYNHAP" Type="DateTime" Precision="3" />
+          <Property Name="XULY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="NGUOIXLYTIEP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATRUYEN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="DT_KHIEUNAI_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Decimal" Precision="10" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDKHIEUNAI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PHONGBAN" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="USERTAO" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DATRUYEN" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="DT_KHIEUNAI" Relationship="Self.FK_DT_KHIEUNAI_USER_DT_KHIEUNAI" FromRole="DT_KHIEUNAI_USER" ToRole="DT_KHIEUNAI" />
+        </EntityType>
+        <EntityType Name="DT_NHOMTINH">
+          <Key>
+            <PropertyRef Name="ID_NHOMTINH" />
+          </Key>
+          <Property Name="ID_NHOMTINH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STTTINH" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="TEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="dtproperty">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="property" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="objectid" Type="Int32" />
+          <Property Name="property" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="value" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="uvalue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="lvalue" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="version" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SYS_LOG">
+          <Key>
+            <PropertyRef Name="IDSYS" />
+          </Key>
+          <Property Name="IDSYS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="A" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="B" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="C" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SYS_LOG_TRUYENNHAN">
+          <Key>
+            <PropertyRef Name="IDKHIEUNAI" />
+          </Key>
+          <Property Name="IDKHIEUNAI" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="NGAY" Type="DateTime" Precision="3" />
+          <Property Name="TRUYENDI" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="NHANDEN" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SYS_NGAY">
+          <Key>
+            <PropertyRef Name="IDNGAY" />
+          </Key>
+          <Property Name="IDNGAY" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENNGAY" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY" Type="DateTime" Precision="3" />
+          <Property Name="THANG" Type="Int16" />
+          <Property Name="NAM" Type="Int16" />
+        </EntityType>
+        <EntityType Name="SYS_RIGHTS">
+          <Key>
+            <PropertyRef Name="MSQUYEN" />
+          </Key>
+          <Property Name="MSQUYEN" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TENQUYEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SYS_USER">
+          <Key>
+            <PropertyRef Name="USERID" />
+          </Key>
+          <Property Name="USERID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STTTINH" Type="Int16" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MATKHAU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SODT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PHONGBAN" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="SHBUUCUC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYSINH" Type="DateTime" Precision="3" />
+          <Property Name="NGUOINHAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CHUCVU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYNHAP" Type="DateTime" Precision="3" />
+          <Property Name="CMND" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="SHINNHATAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DAUMOI" Type="Int16" />
+          <Property Name="DAUMOINB" Type="Int16" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Test">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Names" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Datetime" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DM_MAU_QUYETDINH_BT">
+          <Key>
+            <PropertyRef Name="MA" />
+          </Key>
+          <Property Name="MA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STTTINH" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="DICH_VU" Type="Int32" />
+          <Property Name="TRONG_NUOC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="TEN_BD1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_TP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIEU_1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DIEU_2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_TT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_BD2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MAU_BT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SYS_RIGHTUSER">
+          <Key>
+            <PropertyRef Name="MSQUYEN" />
+          </Key>
+          <Property Name="MSQUYEN" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BCNGOAINUOC">
+          <Key>
+            <PropertyRef Name="MASO" />
+            <PropertyRef Name="IDC" />
+            <PropertyRef Name="IDDICHVU" />
+            <PropertyRef Name="IDLYDO" />
+            <PropertyRef Name="MA_NUOC" />
+          </Key>
+          <Property Name="TENCHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_NUOC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MASO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="IDC" Type="Int16" Nullable="false" />
+          <Property Name="TENDICHVU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IDDICHVU" Type="Int32" Nullable="false" />
+          <Property Name="NGAYLAP" Type="DateTime" Precision="3" />
+          <Property Name="IDLYDO" Type="Int32" Nullable="false" />
+          <Property Name="LYDO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYHOANTHANH" Type="DateTime" Precision="3" />
+          <Property Name="MA_NUOC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NGUOINHAP" Type="Int32" />
+          <Property Name="BCNHANKN" Type="String" MaxLength="17" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BCTRONGNUOC">
+          <Key>
+            <PropertyRef Name="MASO" />
+            <PropertyRef Name="IDC" />
+            <PropertyRef Name="IDDICHVU" />
+            <PropertyRef Name="IDLYDO" />
+            <PropertyRef Name="MA_NUOC" />
+          </Key>
+          <Property Name="TENCHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_NUOC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MASO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="IDC" Type="Int16" Nullable="false" />
+          <Property Name="TENDICHVU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IDDICHVU" Type="Int32" Nullable="false" />
+          <Property Name="NGAYLAP" Type="DateTime" Precision="3" />
+          <Property Name="IDLYDO" Type="Int32" Nullable="false" />
+          <Property Name="LYDO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYHOANTHANH" Type="DateTime" Precision="3" />
+          <Property Name="MA_NUOC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BCNHANKN" Type="String" MaxLength="17" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOINHAP" Type="Int32" />
+        </EntityType>
+        <EntityType Name="VIEW1">
+          <Key>
+            <PropertyRef Name="MS_KHIEUNAI" />
+          </Key>
+          <Property Name="MS_KHIEUNAI" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NGAYLAP" Type="DateTime" Precision="3" />
+          <Property Name="SOHIEUBG" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="LYDO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TENCHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FILEDK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TENDICHVU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MUCDO" Type="Byte" />
+          <Property Name="GHICHU" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOIGOI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DCGOI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NGUOINHAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DCNHAN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BCGOI" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="BCNHAN" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYGOI" Type="DateTime" Precision="3" />
+          <Property Name="KHOILUONG" Type="Single" />
+          <Property Name="TRONGNUOC" Type="Byte" />
+          <Property Name="NGUOIKN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DTFAX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LANKN" Type="Int16" />
+          <Property Name="TINHNHAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NUOCNHAN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TINHGOI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NUOCGOI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TENLH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CHK" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_DT_KHIEUNAI_DM_CHIEU">
+          <End Role="DM_CHIEU" Type="Self.DM_CHIEU" Multiplicity="0..1" />
+          <End Role="DT_KHIEUNAI" Type="Self.DT_KHIEUNAI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_CHIEU">
+              <PropertyRef Name="IDC" />
+            </Principal>
+            <Dependent Role="DT_KHIEUNAI">
+              <PropertyRef Name="CHIEU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_KHIEUNAI_DM_DICHVU">
+          <End Role="DM_DICHVU" Type="Self.DM_DICHVU" Multiplicity="0..1" />
+          <End Role="DT_KHIEUNAI" Type="Self.DT_KHIEUNAI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_DICHVU">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DT_KHIEUNAI">
+              <PropertyRef Name="DICHVU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_KHIEUNAI_DM_LYDOKN">
+          <End Role="DM_LYDOKN" Type="Self.DM_LYDOKN" Multiplicity="0..1" />
+          <End Role="DT_KHIEUNAI" Type="Self.DT_KHIEUNAI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_LYDOKN">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="DT_KHIEUNAI">
+              <PropertyRef Name="LYDOKN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_KHIEUNAI_DM_NUOC">
+          <End Role="DM_NUOC" Type="Self.DM_NUOC" Multiplicity="0..1" />
+          <End Role="DT_KHIEUNAI" Type="Self.DT_KHIEUNAI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_NUOC">
+              <PropertyRef Name="MA_NUOC" />
+            </Principal>
+            <Dependent Role="DT_KHIEUNAI">
+              <PropertyRef Name="NUOCNHAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_KHIEUNAI_DM_TINH_TP">
+          <End Role="DM_TINH_TP" Type="Self.DM_TINH_TP" Multiplicity="0..1" />
+          <End Role="DT_KHIEUNAI" Type="Self.DT_KHIEUNAI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_TINH_TP">
+              <PropertyRef Name="ID_Tinh_TP" />
+            </Principal>
+            <Dependent Role="DT_KHIEUNAI">
+              <PropertyRef Name="TINHNHAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DT_KHIEUNAI_USER_DT_KHIEUNAI">
+          <End Role="DT_KHIEUNAI" Type="Self.DT_KHIEUNAI" Multiplicity="0..1" />
+          <End Role="DT_KHIEUNAI_USER" Type="Self.DT_KHIEUNAI_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DT_KHIEUNAI">
+              <PropertyRef Name="MS_KHIEUNAI" />
+            </Principal>
+            <Dependent Role="DT_KHIEUNAI_USER">
+              <PropertyRef Name="IDKHIEUNAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QL_KHIEUNAIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DM_BUUCUC" EntityType="Self.DM_BUUCUC" />
+          <EntitySet Name="DM_CHIEU" EntityType="Self.DM_CHIEU" />
+          <EntitySet Name="DM_CHUCVU" EntityType="Self.DM_CHUCVU" />
+          <EntitySet Name="DM_CONGTHUC_CUOCBT" EntityType="Self.DM_CONGTHUC_CUOCBT" />
+          <EntitySet Name="DM_DICHVU" EntityType="Self.DM_DICHVU" />
+          <EntitySet Name="DM_DICHVU_DB" EntityType="Self.DM_DICHVU_DB" />
+          <EntitySet Name="DM_KETLUAN" EntityType="Self.DM_KETLUAN" />
+          <EntitySet Name="DM_KETQUA" EntityType="Self.DM_KETQUA" />
+          <EntitySet Name="DM_KHACHHANG" EntityType="Self.DM_KHACHHANG" />
+          <EntitySet Name="DM_LOAIBT" EntityType="Self.DM_LOAIBT" />
+          <EntitySet Name="DM_LOAIDV" EntityType="Self.DM_LOAIDV" />
+          <EntitySet Name="DM_LOAIHANG" EntityType="Self.DM_LOAIHANG" />
+          <EntitySet Name="DM_LYDOKN" EntityType="Self.DM_LYDOKN" />
+          <EntitySet Name="DM_MAU_THONGBAO_BT" EntityType="Self.DM_MAU_THONGBAO_BT" />
+          <EntitySet Name="DM_NUOC" EntityType="Self.DM_NUOC" />
+          <EntitySet Name="DM_PHONGBAN" EntityType="Self.DM_PHONGBAN" />
+          <EntitySet Name="DM_PHUONGTHUC" EntityType="Self.DM_PHUONGTHUC" />
+          <EntitySet Name="DM_PTTRALOI" EntityType="Self.DM_PTTRALOI" />
+          <EntitySet Name="DM_TINH_TP" EntityType="Self.DM_TINH_TP" />
+          <EntitySet Name="DM_WEBKN" EntityType="Self.DM_WEBKN" />
+          <EntitySet Name="DT_KHIEUNAI" EntityType="Self.DT_KHIEUNAI" />
+          <EntitySet Name="DT_KHIEUNAI_BOITHUONG" EntityType="Self.DT_KHIEUNAI_BOITHUONG" />
+          <EntitySet Name="DT_KHIEUNAI_CHUYENTHU" EntityType="Self.DT_KHIEUNAI_CHUYENTHU" />
+          <EntitySet Name="DT_KHIEUNAI_TAM" EntityType="Self.DT_KHIEUNAI_TAM" />
+          <EntitySet Name="DT_KHIEUNAI_TIENTRINH" EntityType="Self.DT_KHIEUNAI_TIENTRINH" />
+          <EntitySet Name="DT_KHIEUNAI_USER" EntityType="Self.DT_KHIEUNAI_USER" />
+          <EntitySet Name="DT_NHOMTINH" EntityType="Self.DT_NHOMTINH" />
+          <EntitySet Name="dtproperties" EntityType="Self.dtproperty" />
+          <EntitySet Name="SYS_LOG" EntityType="Self.SYS_LOG" />
+          <EntitySet Name="SYS_LOG_TRUYENNHAN" EntityType="Self.SYS_LOG_TRUYENNHAN" />
+          <EntitySet Name="SYS_NGAY" EntityType="Self.SYS_NGAY" />
+          <EntitySet Name="SYS_RIGHTS" EntityType="Self.SYS_RIGHTS" />
+          <EntitySet Name="SYS_USER" EntityType="Self.SYS_USER" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Tests" EntityType="Self.Test" />
+          <EntitySet Name="DM_MAU_QUYETDINH_BT" EntityType="Self.DM_MAU_QUYETDINH_BT" />
+          <EntitySet Name="SYS_RIGHTUSER" EntityType="Self.SYS_RIGHTUSER" />
+          <EntitySet Name="BCNGOAINUOCs" EntityType="Self.BCNGOAINUOC" />
+          <EntitySet Name="BCTRONGNUOCs" EntityType="Self.BCTRONGNUOC" />
+          <EntitySet Name="VIEW1" EntityType="Self.VIEW1" />
+          <AssociationSet Name="FK_DT_KHIEUNAI_DM_CHIEU" Association="Self.FK_DT_KHIEUNAI_DM_CHIEU">
+            <End Role="DM_CHIEU" EntitySet="DM_CHIEU" />
+            <End Role="DT_KHIEUNAI" EntitySet="DT_KHIEUNAI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_KHIEUNAI_DM_DICHVU" Association="Self.FK_DT_KHIEUNAI_DM_DICHVU">
+            <End Role="DM_DICHVU" EntitySet="DM_DICHVU" />
+            <End Role="DT_KHIEUNAI" EntitySet="DT_KHIEUNAI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_KHIEUNAI_DM_LYDOKN" Association="Self.FK_DT_KHIEUNAI_DM_LYDOKN">
+            <End Role="DM_LYDOKN" EntitySet="DM_LYDOKN" />
+            <End Role="DT_KHIEUNAI" EntitySet="DT_KHIEUNAI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_KHIEUNAI_DM_NUOC" Association="Self.FK_DT_KHIEUNAI_DM_NUOC">
+            <End Role="DM_NUOC" EntitySet="DM_NUOC" />
+            <End Role="DT_KHIEUNAI" EntitySet="DT_KHIEUNAI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_KHIEUNAI_DM_TINH_TP" Association="Self.FK_DT_KHIEUNAI_DM_TINH_TP">
+            <End Role="DM_TINH_TP" EntitySet="DM_TINH_TP" />
+            <End Role="DT_KHIEUNAI" EntitySet="DT_KHIEUNAI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DT_KHIEUNAI_USER_DT_KHIEUNAI" Association="Self.FK_DT_KHIEUNAI_USER_DT_KHIEUNAI">
+            <End Role="DT_KHIEUNAI" EntitySet="DT_KHIEUNAI" />
+            <End Role="DT_KHIEUNAI_USER" EntitySet="DT_KHIEUNAI_USER" />
+          </AssociationSet>
+          <FunctionImport Name="dt_addtosourcecontrol">
+            <Parameter Name="vchSourceSafeINI" Mode="In" Type="String" />
+            <Parameter Name="vchProjectName" Mode="In" Type="String" />
+            <Parameter Name="vchComment" Mode="In" Type="String" />
+            <Parameter Name="vchLoginName" Mode="In" Type="String" />
+            <Parameter Name="vchPassword" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_addtosourcecontrol_u">
+            <Parameter Name="vchSourceSafeINI" Mode="In" Type="String" />
+            <Parameter Name="vchProjectName" Mode="In" Type="String" />
+            <Parameter Name="vchComment" Mode="In" Type="String" />
+            <Parameter Name="vchLoginName" Mode="In" Type="String" />
+            <Parameter Name="vchPassword" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_adduserobject" />
+          <FunctionImport Name="dt_adduserobject_vcs">
+          <Parameter Name="vchProperty" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_checkinobject">
+            <Parameter Name="chObjectType" Mode="In" Type="String" />
+            <Parameter Name="vchObjectName" Mode="In" Type="String" />
+            <Parameter Name="vchComment" Mode="In" Type="String" />
+            <Parameter Name="vchLoginName" Mode="In" Type="String" />
+            <Parameter Name="vchPassword" Mode="In" Type="String" />
+            <Parameter Name="iVCSFlags" Mode="In" Type="Int32" />
+            <Parameter Name="iActionFlag" Mode="In" Type="Int32" />
+            <Parameter Name="txStream1" Mode="In" Type="String" />
+            <Parameter Name="txStream2" Mode="In" Type="String" />
+            <Parameter Name="txStream3" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_checkinobject_u">
+            <Parameter Name="chObjectType" Mode="In" Type="String" />
+            <Parameter Name="vchObjectName" Mode="In" Type="String" />
+            <Parameter Name="vchComment" Mode="In" Type="String" />
+            <Parameter Name="vchLoginName" Mode="In" Type="String" />
+            <Parameter Name="vchPassword" Mode="In" Type="String" />
+            <Parameter Name="iVCSFlags" Mode="In" Type="Int32" />
+            <Parameter Name="iActionFlag" Mode="In" Type="Int32" />
+            <Parameter Name="txStream1" Mode="In" Type="String" />
+            <Parameter Name="txStream2" Mode="In" Type="String" />
+            <Parameter Name="txStream3" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_checkoutobject">
+            <Parameter Name="chObjectType" Mode="In" Type="String" />
+            <Parameter Name="vchObjectName" Mode="In" Type="String" />
+            <Parameter Name="vchComment" Mode="In" Type="String" />
+            <Parameter Name="vchLoginName" Mode="In" Type="String" />
+            <Parameter Name="vchPassword" Mode="In" Type="String" />
+            <Parameter Name="iVCSFlags" Mode="In" Type="Int32" />
+            <Parameter Name="iActionFlag" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="dt_checkoutobject_u">
+            <Parameter Name="chObjectType" Mode="In" Type="String" />
+            <Parameter Name="vchObjectName" Mode="In" Type="String" />
+            <Parameter Name="vchComment" Mode="In" Type="String" />
+            <Parameter Name="vchLoginName" Mode="In" Type="String" />
+            <Parameter Name="vchPassword" Mode="In" Type="String" />
+            <Parameter Name="iVCSFlags" Mode="In" Type="Int32" />
+            <Parameter Name="iActionFlag" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="dt_displayoaerror">
+            <Parameter Name="iObject" Mode="In" Type="Int32" />
+            <Parameter Name="iresult" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="dt_displayoaerror_u">
+            <Parameter Name="iObject" Mode="In" Type="Int32" />
+            <Parameter Name="iresult" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="dt_droppropertiesbyid">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="property" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_dropuserobjectbyid">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="dt_generateansiname">
+          <Parameter Name="name" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_getobjwithprop" ReturnType="Collection(Int32)">
+            <Parameter Name="property" Mode="In" Type="String" />
+            <Parameter Name="value" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_getobjwithprop_u" ReturnType="Collection(Int32)">
+            <Parameter Name="property" Mode="In" Type="String" />
+            <Parameter Name="uvalue" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_getpropertiesbyid" ReturnType="Collection(QL_KHIEUNAIModel.dt_getpropertiesbyid_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="property" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_getpropertiesbyid_u" ReturnType="Collection(QL_KHIEUNAIModel.dt_getpropertiesbyid_u_Result)">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="property" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_getpropertiesbyid_vcs">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="property" Mode="In" Type="String" />
+            <Parameter Name="value" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_getpropertiesbyid_vcs_u">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="property" Mode="In" Type="String" />
+            <Parameter Name="value" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_isundersourcecontrol">
+            <Parameter Name="vchLoginName" Mode="In" Type="String" />
+            <Parameter Name="vchPassword" Mode="In" Type="String" />
+            <Parameter Name="iWhoToo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="dt_isundersourcecontrol_u">
+            <Parameter Name="vchLoginName" Mode="In" Type="String" />
+            <Parameter Name="vchPassword" Mode="In" Type="String" />
+            <Parameter Name="iWhoToo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="dt_removefromsourcecontrol" />
+          <FunctionImport Name="dt_setpropertybyid">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="property" Mode="In" Type="String" />
+            <Parameter Name="value" Mode="In" Type="String" />
+            <Parameter Name="lvalue" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="dt_setpropertybyid_u">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="property" Mode="In" Type="String" />
+            <Parameter Name="uvalue" Mode="In" Type="String" />
+            <Parameter Name="lvalue" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="dt_validateloginparams">
+            <Parameter Name="vchLoginName" Mode="In" Type="String" />
+            <Parameter Name="vchPassword" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_validateloginparams_u">
+            <Parameter Name="vchLoginName" Mode="In" Type="String" />
+            <Parameter Name="vchPassword" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_vcsenabled" />
+          <FunctionImport Name="dt_verstamp006" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="dt_verstamp007" ReturnType="Collection(Int32)" />
+          <FunctionImport Name="dt_whocheckedout">
+            <Parameter Name="chObjectType" Mode="In" Type="String" />
+            <Parameter Name="vchObjectName" Mode="In" Type="String" />
+            <Parameter Name="vchLoginName" Mode="In" Type="String" />
+            <Parameter Name="vchPassword" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="dt_whocheckedout_u">
+            <Parameter Name="chObjectType" Mode="In" Type="String" />
+            <Parameter Name="vchObjectName" Mode="In" Type="String" />
+            <Parameter Name="vchLoginName" Mode="In" Type="String" />
+            <Parameter Name="vchPassword" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="TK_KN_BT_BCCP_CHUNG" ReturnType="Collection(QL_KHIEUNAIModel.TK_KN_BT_BCCP_CHUNG_Result)">
+            <Parameter Name="CHIEU" Mode="In" Type="Int32" />
+            <Parameter Name="NGAY_BD" Mode="In" Type="String" />
+            <Parameter Name="NGAY_KT" Mode="In" Type="String" />
+            <Parameter Name="TINH" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TK_KN_BT_BCCP_DONVI" ReturnType="Collection(QL_KHIEUNAIModel.TK_KN_BT_BCCP_DONVI_Result)">
+            <Parameter Name="CHIEU" Mode="In" Type="Int32" />
+            <Parameter Name="NGAY_BD" Mode="In" Type="String" />
+            <Parameter Name="NGAY_KT" Mode="In" Type="String" />
+            <Parameter Name="TINH" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="TK_KN_CAC_DV_BCCP" ReturnType="Collection(QL_KHIEUNAIModel.TK_KN_CAC_DV_BCCP_Result)">
+            <Parameter Name="CHIEU" Mode="In" Type="Int32" />
+            <Parameter Name="NGAY_BD" Mode="In" Type="String" />
+            <Parameter Name="NGAY_KT" Mode="In" Type="String" />
+            <Parameter Name="TINH" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="dt_getpropertiesbyid_Result">
+          <Property Type="String" Name="property" Nullable="false" MaxLength="64" />
+          <Property Type="Int32" Name="version" Nullable="false" />
+          <Property Type="String" Name="value" Nullable="true" MaxLength="255" />
+          <Property Type="Binary" Name="lvalue" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="dt_getpropertiesbyid_u_Result">
+          <Property Type="String" Name="property" Nullable="false" MaxLength="64" />
+          <Property Type="Int32" Name="version" Nullable="false" />
+          <Property Type="String" Name="uvalue" Nullable="true" MaxLength="255" />
+          <Property Type="Binary" Name="lvalue" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <ComplexType Name="TK_KN_BT_BCCP_CHUNG_Result">
+          <Property Type="Int32" Name="SL_TN" Nullable="true" />
+          <Property Type="Int32" Name="TIENBT_TN" Nullable="true" />
+          <Property Type="Int32" Name="SL_QT" Nullable="true" />
+          <Property Type="Int32" Name="TIENBT_QT" Nullable="true" />
+          <Property Type="Int32" Name="LOAIDV" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TK_KN_BT_BCCP_DONVI_Result">
+          <Property Type="Int32" Name="SL_TN" Nullable="true" />
+          <Property Type="Int32" Name="TIENBT_TN" Nullable="true" />
+          <Property Type="Int32" Name="SL_QT" Nullable="true" />
+          <Property Type="Int32" Name="TIENBT_QT" Nullable="true" />
+          <Property Type="Int32" Name="LOAIDV" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TK_KN_CAC_DV_BCCP_Result">
+          <Property Type="Int32" Name="SL_TN_CS" Nullable="true" />
+          <Property Type="Int32" Name="SL_QT_CS" Nullable="true" />
+          <Property Type="Int32" Name="SL_TN_PS" Nullable="true" />
+          <Property Type="Int32" Name="SL_QT_PS" Nullable="true" />
+          <Property Type="Int32" Name="SL_TN_GQ" Nullable="true" />
+          <Property Type="Int32" Name="SL_QT_GQ" Nullable="true" />
+          <Property Type="Int32" Name="SL_TN_CL" Nullable="true" />
+          <Property Type="Int32" Name="SL_QT_CL" Nullable="true" />
+          <Property Type="Int32" Name="LOAIDV" Nullable="true" />
+          <Property Type="Int32" Name="LYDOKN" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QL_KHIEUNAIModelStoreContainer" CdmEntityContainer="QL_KHIEUNAIEntities">
+          <EntitySetMapping Name="DM_BUUCUC">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_BUUCUC">
+              <MappingFragment StoreEntitySet="DM_BUUCUC">
+                <ScalarProperty Name="IDBC" ColumnName="IDBC" />
+                <ScalarProperty Name="SOHIEU" ColumnName="SOHIEU" />
+                <ScalarProperty Name="TENBC" ColumnName="TENBC" />
+                <ScalarProperty Name="SODT" ColumnName="SODT" />
+                <ScalarProperty Name="SOFAX" ColumnName="SOFAX" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+                <ScalarProperty Name="LOAIBC" ColumnName="LOAIBC" />
+                <ScalarProperty Name="MABUUDIEN" ColumnName="MABUUDIEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_CHIEU">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_CHIEU">
+              <MappingFragment StoreEntitySet="DM_CHIEU">
+                <ScalarProperty Name="IDC" ColumnName="IDC" />
+                <ScalarProperty Name="TENCHIEU" ColumnName="TENCHIEU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_CHUCVU">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_CHUCVU">
+              <MappingFragment StoreEntitySet="DM_CHUCVU">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TENCHUCVU" ColumnName="TENCHUCVU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_CONGTHUC_CUOCBT">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_CONGTHUC_CUOCBT">
+              <MappingFragment StoreEntitySet="DM_CONGTHUC_CUOCBT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="STTTINH" ColumnName="STTTINH" />
+                <ScalarProperty Name="DICH_VU" ColumnName="DICH_VU" />
+                <ScalarProperty Name="TRONG_NUOC" ColumnName="TRONG_NUOC" />
+                <ScalarProperty Name="KET_LUAN" ColumnName="KET_LUAN" />
+                <ScalarProperty Name="LOAI_BT" ColumnName="LOAI_BT" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="MAB" ColumnName="MAB" />
+                <ScalarProperty Name="F" ColumnName="F" />
+                <ScalarProperty Name="TEN_LYDO_BT" ColumnName="TEN_LYDO_BT" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_DICHVU">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_DICHVU">
+              <MappingFragment StoreEntitySet="DM_DICHVU">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TENTAT" ColumnName="TENTAT" />
+                <ScalarProperty Name="TENDICHVU" ColumnName="TENDICHVU" />
+                <ScalarProperty Name="LOAIDV" ColumnName="LOAIDV" />
+                <ScalarProperty Name="THOIGIAN" ColumnName="THOIGIAN" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_DICHVU_DB">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_DICHVU_DB">
+              <MappingFragment StoreEntitySet="DM_DICHVU_DB">
+                <ScalarProperty Name="IDDV" ColumnName="IDDV" />
+                <ScalarProperty Name="TENDICHVU" ColumnName="TENDICHVU" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_KETLUAN">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_KETLUAN">
+              <MappingFragment StoreEntitySet="DM_KETLUAN">
+                <ScalarProperty Name="IDKL" ColumnName="IDKL" />
+                <ScalarProperty Name="TENKL" ColumnName="TENKL" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_KETQUA">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_KETQUA">
+              <MappingFragment StoreEntitySet="DM_KETQUA">
+                <ScalarProperty Name="IDKQ" ColumnName="IDKQ" />
+                <ScalarProperty Name="TENKQ" ColumnName="TENKQ" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_KHACHHANG">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_KHACHHANG">
+              <MappingFragment StoreEntitySet="DM_KHACHHANG">
+                <ScalarProperty Name="IDKH" ColumnName="IDKH" />
+                <ScalarProperty Name="DONVI" ColumnName="DONVI" />
+                <ScalarProperty Name="STTTINH" ColumnName="STTTINH" />
+                <ScalarProperty Name="MAKH" ColumnName="MAKH" />
+                <ScalarProperty Name="TENTAT" ColumnName="TENTAT" />
+                <ScalarProperty Name="TENKH" ColumnName="TENKH" />
+                <ScalarProperty Name="NGUOILH" ColumnName="NGUOILH" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="LOAIKH" ColumnName="LOAIKH" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_LOAIBT">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_LOAIBT">
+              <MappingFragment StoreEntitySet="DM_LOAIBT">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LYDO_BT" ColumnName="LYDO_BT" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_LOAIDV">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_LOAIDV">
+              <MappingFragment StoreEntitySet="DM_LOAIDV">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TENLOAI" ColumnName="TENLOAI" />
+                <ScalarProperty Name="THUTU" ColumnName="THUTU" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_LOAIHANG">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_LOAIHANG">
+              <MappingFragment StoreEntitySet="DM_LOAIHANG">
+                <ScalarProperty Name="IDLH" ColumnName="IDLH" />
+                <ScalarProperty Name="TENLH" ColumnName="TENLH" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_LYDOKN">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_LYDOKN">
+              <MappingFragment StoreEntitySet="DM_LYDOKN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LYDO" ColumnName="LYDO" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_MAU_THONGBAO_BT">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_MAU_THONGBAO_BT">
+              <MappingFragment StoreEntitySet="DM_MAU_THONGBAO_BT">
+                <ScalarProperty Name="MA" ColumnName="MA" />
+                <ScalarProperty Name="STTTINH" ColumnName="STTTINH" />
+                <ScalarProperty Name="LOAI_BT" ColumnName="LOAI_BT" />
+                <ScalarProperty Name="TRONG_NUOC" ColumnName="TRONG_NUOC" />
+                <ScalarProperty Name="TEN_BD1" ColumnName="TEN_BD1" />
+                <ScalarProperty Name="TEN_BD2" ColumnName="TEN_BD2" />
+                <ScalarProperty Name="TEN_TP" ColumnName="TEN_TP" />
+                <ScalarProperty Name="DIEU_1" ColumnName="DIEU_1" />
+                <ScalarProperty Name="DIEU_2" ColumnName="DIEU_2" />
+                <ScalarProperty Name="DIEU_3" ColumnName="DIEU_3" />
+                <ScalarProperty Name="TEN_TT" ColumnName="TEN_TT" />
+                <ScalarProperty Name="MAU_BT" ColumnName="MAU_BT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_NUOC">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_NUOC">
+              <MappingFragment StoreEntitySet="DM_NUOC">
+                <ScalarProperty Name="MA_NUOC" ColumnName="MA_NUOC" />
+                <ScalarProperty Name="TEN_NUOC" ColumnName="TEN_NUOC" />
+                <ScalarProperty Name="MA_VUNG" ColumnName="MA_VUNG" />
+                <ScalarProperty Name="TEN_VUNG" ColumnName="TEN_VUNG" />
+                <ScalarProperty Name="CACH_TINH_CUOC" ColumnName="CACH_TINH_CUOC" />
+                <ScalarProperty Name="TY_LE_CUOC" ColumnName="TY_LE_CUOC" />
+                <ScalarProperty Name="DON_VI_TIEN_TE" ColumnName="DON_VI_TIEN_TE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_PHONGBAN">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_PHONGBAN">
+              <MappingFragment StoreEntitySet="DM_PHONGBAN">
+                <ScalarProperty Name="MSPB" ColumnName="MSPB" />
+                <ScalarProperty Name="MSPBCU" ColumnName="MSPBCU" />
+                <ScalarProperty Name="BUUDIEN" ColumnName="BUUDIEN" />
+                <ScalarProperty Name="TENPB" ColumnName="TENPB" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="STT" ColumnName="STT" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+                <ScalarProperty Name="DAUMOI" ColumnName="DAUMOI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_PHUONGTHUC">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_PHUONGTHUC">
+              <MappingFragment StoreEntitySet="DM_PHUONGTHUC">
+                <ScalarProperty Name="IDPT" ColumnName="IDPT" />
+                <ScalarProperty Name="TENPT" ColumnName="TENPT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_PTTRALOI">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_PTTRALOI">
+              <MappingFragment StoreEntitySet="DM_PTTRALOI">
+                <ScalarProperty Name="IDPT" ColumnName="IDPT" />
+                <ScalarProperty Name="TENPT" ColumnName="TENPT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_TINH_TP">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_TINH_TP">
+              <MappingFragment StoreEntitySet="DM_TINH_TP">
+                <ScalarProperty Name="ID_Tinh_TP" ColumnName="ID_Tinh_TP" />
+                <ScalarProperty Name="STT_Tinh_TP" ColumnName="STT_Tinh_TP" />
+                <ScalarProperty Name="Ten_Tinh_TP" ColumnName="Ten_Tinh_TP" />
+                <ScalarProperty Name="TEN_BD" ColumnName="TEN_BD" />
+                <ScalarProperty Name="IP_Tinh_TP" ColumnName="IP_Tinh_TP" />
+                <ScalarProperty Name="Ma_vung_BK" ColumnName="Ma_vung_BK" />
+                <ScalarProperty Name="Ma_Vung_EMS" ColumnName="Ma_Vung_EMS" />
+                <ScalarProperty Name="MA_TT_KT" ColumnName="MA_TT_KT" />
+                <ScalarProperty Name="NHOM_TINH" ColumnName="NHOM_TINH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_WEBKN">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_WEBKN">
+              <MappingFragment StoreEntitySet="DM_WEBKN">
+                <ScalarProperty Name="IDWEB" ColumnName="IDWEB" />
+                <ScalarProperty Name="TENWEB" ColumnName="TENWEB" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DT_KHIEUNAI">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DT_KHIEUNAI">
+              <MappingFragment StoreEntitySet="DT_KHIEUNAI">
+                <ScalarProperty Name="MS_KHIEUNAI" ColumnName="MS_KHIEUNAI" />
+                <ScalarProperty Name="STTTINH" ColumnName="STTTINH" />
+                <ScalarProperty Name="CHIEU" ColumnName="CHIEU" />
+                <ScalarProperty Name="IDPTTL" ColumnName="IDPTTL" />
+                <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+                <ScalarProperty Name="HETHAN" ColumnName="HETHAN" />
+                <ScalarProperty Name="LOAIDV" ColumnName="LOAIDV" />
+                <ScalarProperty Name="DICHVU" ColumnName="DICHVU" />
+                <ScalarProperty Name="DICHVUDB" ColumnName="DICHVUDB" />
+                <ScalarProperty Name="SOHIEUBG" ColumnName="SOHIEUBG" />
+                <ScalarProperty Name="LYDOKN" ColumnName="LYDOKN" />
+                <ScalarProperty Name="MUCDO" ColumnName="MUCDO" />
+                <ScalarProperty Name="FILEDK" ColumnName="FILEDK" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="NGUOIGOI" ColumnName="NGUOIGOI" />
+                <ScalarProperty Name="DCGOI" ColumnName="DCGOI" />
+                <ScalarProperty Name="TINHGOI" ColumnName="TINHGOI" />
+                <ScalarProperty Name="NUOCGOI" ColumnName="NUOCGOI" />
+                <ScalarProperty Name="NGUOINHAN" ColumnName="NGUOINHAN" />
+                <ScalarProperty Name="DCNHAN" ColumnName="DCNHAN" />
+                <ScalarProperty Name="TINHNHAN" ColumnName="TINHNHAN" />
+                <ScalarProperty Name="NUOCNHAN" ColumnName="NUOCNHAN" />
+                <ScalarProperty Name="BCGOI" ColumnName="BCGOI" />
+                <ScalarProperty Name="BCNHANKN" ColumnName="BCNHANKN" />
+                <ScalarProperty Name="NGAYGOI" ColumnName="NGAYGOI" />
+                <ScalarProperty Name="KHOILUONG" ColumnName="KHOILUONG" />
+                <ScalarProperty Name="PLNOIDUNG" ColumnName="PLNOIDUNG" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="TRONGNUOC" ColumnName="TRONGNUOC" />
+                <ScalarProperty Name="NGUOIKN" ColumnName="NGUOIKN" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="DTFAX" ColumnName="DTFAX" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="NGUOINHAP" ColumnName="NGUOINHAP" />
+                <ScalarProperty Name="NGAYNHAP" ColumnName="NGAYNHAP" />
+                <ScalarProperty Name="PHONGBAN" ColumnName="PHONGBAN" />
+                <ScalarProperty Name="LANKN" ColumnName="LANKN" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+                <ScalarProperty Name="HUYKN" ColumnName="HUYKN" />
+                <ScalarProperty Name="NGUOIHUY" ColumnName="NGUOIHUY" />
+                <ScalarProperty Name="NGAYHUY" ColumnName="NGAYHUY" />
+                <ScalarProperty Name="CUOC" ColumnName="CUOC" />
+                <ScalarProperty Name="THOIGIAN" ColumnName="THOIGIAN" />
+                <ScalarProperty Name="NGAYHH" ColumnName="NGAYHH" />
+                <ScalarProperty Name="KNDACBIET" ColumnName="KNDACBIET" />
+                <ScalarProperty Name="NGAYHOANTHANH" ColumnName="NGAYHOANTHANH" />
+                <ScalarProperty Name="NGUYENNHAN" ColumnName="NGUYENNHAN" />
+                <ScalarProperty Name="KHLON" ColumnName="KHLON" />
+                <ScalarProperty Name="KETLUAN" ColumnName="KETLUAN" />
+                <ScalarProperty Name="NGAYKETLUAN" ColumnName="NGAYKETLUAN" />
+                <ScalarProperty Name="HTVCHUYEN" ColumnName="HTVCHUYEN" />
+                <ScalarProperty Name="DATRUYEN" ColumnName="DATRUYEN" />
+                <ScalarProperty Name="NGAYGIOIHAN" ColumnName="NGAYGIOIHAN" />
+                <ScalarProperty Name="NGAYGIOIHANKH" ColumnName="NGAYGIOIHANKH" />
+                <ScalarProperty Name="isKHL" ColumnName="isKHL" />
+                <ScalarProperty Name="isDACBIET" ColumnName="isDACBIET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DT_KHIEUNAI_BOITHUONG">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DT_KHIEUNAI_BOITHUONG">
+              <MappingFragment StoreEntitySet="DT_KHIEUNAI_BOITHUONG">
+                <ScalarProperty Name="IDBT" ColumnName="IDBT" />
+                <ScalarProperty Name="IDKHIEUNAI" ColumnName="IDKHIEUNAI" />
+                <ScalarProperty Name="NGUOIBT" ColumnName="NGUOIBT" />
+                <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+                <ScalarProperty Name="NGUOINHAP" ColumnName="NGUOINHAP" />
+                <ScalarProperty Name="NGAYNHAP" ColumnName="NGAYNHAP" />
+                <ScalarProperty Name="LOAI_BT" ColumnName="LOAI_BT" />
+                <ScalarProperty Name="TIENHOANCUOC" ColumnName="TIENHOANCUOC" />
+                <ScalarProperty Name="TIENBT" ColumnName="TIENBT" />
+                <ScalarProperty Name="BAOHIEM" ColumnName="BAOHIEM" />
+                <ScalarProperty Name="SOQDBOITHUONG" ColumnName="SOQDBOITHUONG" />
+                <ScalarProperty Name="SOTBBOITHUONG" ColumnName="SOTBBOITHUONG" />
+                <ScalarProperty Name="NGAYKYBT" ColumnName="NGAYKYBT" />
+                <ScalarProperty Name="FILEQDBT" ColumnName="FILEQDBT" />
+                <ScalarProperty Name="DA_CHI_BT" ColumnName="DA_CHI_BT" />
+                <ScalarProperty Name="SOQDTHUHOI" ColumnName="SOQDTHUHOI" />
+                <ScalarProperty Name="SOTBTHUHOI" ColumnName="SOTBTHUHOI" />
+                <ScalarProperty Name="FILEQDTH" ColumnName="FILEQDTH" />
+                <ScalarProperty Name="NGAYTHUHOI" ColumnName="NGAYTHUHOI" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+                <ScalarProperty Name="NGUOI_CHI_TIEN" ColumnName="NGUOI_CHI_TIEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DT_KHIEUNAI_CHUYENTHU">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DT_KHIEUNAI_CHUYENTHU">
+              <MappingFragment StoreEntitySet="DT_KHIEUNAI_CHUYENTHU">
+                <ScalarProperty Name="IDCTKN" ColumnName="IDCTKN" />
+                <ScalarProperty Name="IDKHIEUNAI" ColumnName="IDKHIEUNAI" />
+                <ScalarProperty Name="BCGOC" ColumnName="BCGOC" />
+                <ScalarProperty Name="BCNHAN" ColumnName="BCNHAN" />
+                <ScalarProperty Name="SOCT" ColumnName="SOCT" />
+                <ScalarProperty Name="NGAYDONG" ColumnName="NGAYDONG" />
+                <ScalarProperty Name="SOTUI" ColumnName="SOTUI" />
+                <ScalarProperty Name="PHUONGTHUC" ColumnName="PHUONGTHUC" />
+                <ScalarProperty Name="DONG" ColumnName="DONG" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="NGUOINHAP" ColumnName="NGUOINHAP" />
+                <ScalarProperty Name="NGAYNHAP" ColumnName="NGAYNHAP" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+                <ScalarProperty Name="XOA" ColumnName="XOA" />
+                <ScalarProperty Name="DATRUYEN" ColumnName="DATRUYEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DT_KHIEUNAI_TAM">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DT_KHIEUNAI_TAM">
+              <MappingFragment StoreEntitySet="DT_KHIEUNAI_TAM">
+                <ScalarProperty Name="MS_KHIEUNAI" ColumnName="MS_KHIEUNAI" />
+                <ScalarProperty Name="STTTINH" ColumnName="STTTINH" />
+                <ScalarProperty Name="CHIEU" ColumnName="CHIEU" />
+                <ScalarProperty Name="IDPTTL" ColumnName="IDPTTL" />
+                <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+                <ScalarProperty Name="HETHAN" ColumnName="HETHAN" />
+                <ScalarProperty Name="LOAIDV" ColumnName="LOAIDV" />
+                <ScalarProperty Name="DICHVU" ColumnName="DICHVU" />
+                <ScalarProperty Name="DICHVUDB" ColumnName="DICHVUDB" />
+                <ScalarProperty Name="SOHIEUBG" ColumnName="SOHIEUBG" />
+                <ScalarProperty Name="LYDOKN" ColumnName="LYDOKN" />
+                <ScalarProperty Name="MUCDO" ColumnName="MUCDO" />
+                <ScalarProperty Name="FILEDK" ColumnName="FILEDK" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="NGUOIGOI" ColumnName="NGUOIGOI" />
+                <ScalarProperty Name="DCGOI" ColumnName="DCGOI" />
+                <ScalarProperty Name="TINHGOI" ColumnName="TINHGOI" />
+                <ScalarProperty Name="NUOCGOI" ColumnName="NUOCGOI" />
+                <ScalarProperty Name="NGUOINHAN" ColumnName="NGUOINHAN" />
+                <ScalarProperty Name="DCNHAN" ColumnName="DCNHAN" />
+                <ScalarProperty Name="TINHNHAN" ColumnName="TINHNHAN" />
+                <ScalarProperty Name="NUOCNHAN" ColumnName="NUOCNHAN" />
+                <ScalarProperty Name="BCGOI" ColumnName="BCGOI" />
+                <ScalarProperty Name="BCNHANKN" ColumnName="BCNHANKN" />
+                <ScalarProperty Name="NGAYGOI" ColumnName="NGAYGOI" />
+                <ScalarProperty Name="KHOILUONG" ColumnName="KHOILUONG" />
+                <ScalarProperty Name="PLNOIDUNG" ColumnName="PLNOIDUNG" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="TRONGNUOC" ColumnName="TRONGNUOC" />
+                <ScalarProperty Name="NGUOIKN" ColumnName="NGUOIKN" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="DTFAX" ColumnName="DTFAX" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="NGUOINHAP" ColumnName="NGUOINHAP" />
+                <ScalarProperty Name="NGAYNHAP" ColumnName="NGAYNHAP" />
+                <ScalarProperty Name="PHONGBAN" ColumnName="PHONGBAN" />
+                <ScalarProperty Name="LANKN" ColumnName="LANKN" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+                <ScalarProperty Name="HUYKN" ColumnName="HUYKN" />
+                <ScalarProperty Name="NGUOIHUY" ColumnName="NGUOIHUY" />
+                <ScalarProperty Name="NGAYHUY" ColumnName="NGAYHUY" />
+                <ScalarProperty Name="CUOC" ColumnName="CUOC" />
+                <ScalarProperty Name="THOIGIAN" ColumnName="THOIGIAN" />
+                <ScalarProperty Name="NGAYHH" ColumnName="NGAYHH" />
+                <ScalarProperty Name="KNDACBIET" ColumnName="KNDACBIET" />
+                <ScalarProperty Name="NGAYHOANTHANH" ColumnName="NGAYHOANTHANH" />
+                <ScalarProperty Name="NGUYENNHAN" ColumnName="NGUYENNHAN" />
+                <ScalarProperty Name="KHLON" ColumnName="KHLON" />
+                <ScalarProperty Name="HTVCHUYEN" ColumnName="HTVCHUYEN" />
+                <ScalarProperty Name="NGAY_CT" ColumnName="NGAY_CT" />
+                <ScalarProperty Name="SOTUI" ColumnName="SOTUI" />
+                <ScalarProperty Name="SOCHUYEN" ColumnName="SOCHUYEN" />
+                <ScalarProperty Name="BCGUI_BG" ColumnName="BCGUI_BG" />
+                <ScalarProperty Name="BCNHAN_BG" ColumnName="BCNHAN_BG" />
+                <ScalarProperty Name="DATRUYEN" ColumnName="DATRUYEN" />
+                <ScalarProperty Name="ISKHL" ColumnName="ISKHL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DT_KHIEUNAI_TIENTRINH">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DT_KHIEUNAI_TIENTRINH">
+              <MappingFragment StoreEntitySet="DT_KHIEUNAI_TIENTRINH">
+                <ScalarProperty Name="IDCTKN" ColumnName="IDCTKN" />
+                <ScalarProperty Name="IDKHIEUNAI" ColumnName="IDKHIEUNAI" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="NOIDUNGTA" ColumnName="NOIDUNGTA" />
+                <ScalarProperty Name="NOIDUNGBC08" ColumnName="NOIDUNGBC08" />
+                <ScalarProperty Name="NGAYCHUYEN" ColumnName="NGAYCHUYEN" />
+                <ScalarProperty Name="NGAYPHAT" ColumnName="NGAYPHAT" />
+                <ScalarProperty Name="FILEDK" ColumnName="FILEDK" />
+                <ScalarProperty Name="KETQUA" ColumnName="KETQUA" />
+                <ScalarProperty Name="NGUOINHAP" ColumnName="NGUOINHAP" />
+                <ScalarProperty Name="NGAYNHAP" ColumnName="NGAYNHAP" />
+                <ScalarProperty Name="XULY" ColumnName="XULY" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+                <ScalarProperty Name="NGUOIXLYTIEP" ColumnName="NGUOIXLYTIEP" />
+                <ScalarProperty Name="DATRUYEN" ColumnName="DATRUYEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DT_KHIEUNAI_USER">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DT_KHIEUNAI_USER">
+              <MappingFragment StoreEntitySet="DT_KHIEUNAI_USER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="IDKHIEUNAI" ColumnName="IDKHIEUNAI" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PHONGBAN" ColumnName="PHONGBAN" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+                <ScalarProperty Name="USERTAO" ColumnName="USERTAO" />
+                <ScalarProperty Name="DATRUYEN" ColumnName="DATRUYEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DT_NHOMTINH">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DT_NHOMTINH">
+              <MappingFragment StoreEntitySet="DT_NHOMTINH">
+                <ScalarProperty Name="ID_NHOMTINH" ColumnName="ID_NHOMTINH" />
+                <ScalarProperty Name="STTTINH" ColumnName="STTTINH" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dtproperties">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.dtproperty">
+              <MappingFragment StoreEntitySet="dtproperties">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="objectid" ColumnName="objectid" />
+                <ScalarProperty Name="property" ColumnName="property" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+                <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+                <ScalarProperty Name="version" ColumnName="version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_LOG">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.SYS_LOG">
+              <MappingFragment StoreEntitySet="SYS_LOG">
+                <ScalarProperty Name="IDSYS" ColumnName="IDSYS" />
+                <ScalarProperty Name="A" ColumnName="A" />
+                <ScalarProperty Name="B" ColumnName="B" />
+                <ScalarProperty Name="C" ColumnName="C" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_LOG_TRUYENNHAN">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.SYS_LOG_TRUYENNHAN">
+              <MappingFragment StoreEntitySet="SYS_LOG_TRUYENNHAN">
+                <ScalarProperty Name="IDKHIEUNAI" ColumnName="IDKHIEUNAI" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+                <ScalarProperty Name="TRUYENDI" ColumnName="TRUYENDI" />
+                <ScalarProperty Name="NHANDEN" ColumnName="NHANDEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_NGAY">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.SYS_NGAY">
+              <MappingFragment StoreEntitySet="SYS_NGAY">
+                <ScalarProperty Name="IDNGAY" ColumnName="IDNGAY" />
+                <ScalarProperty Name="TENNGAY" ColumnName="TENNGAY" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+                <ScalarProperty Name="THANG" ColumnName="THANG" />
+                <ScalarProperty Name="NAM" ColumnName="NAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_RIGHTS">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.SYS_RIGHTS">
+              <MappingFragment StoreEntitySet="SYS_RIGHTS">
+                <ScalarProperty Name="MSQUYEN" ColumnName="MSQUYEN" />
+                <ScalarProperty Name="TENQUYEN" ColumnName="TENQUYEN" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_USER">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.SYS_USER">
+              <MappingFragment StoreEntitySet="SYS_USER">
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="STTTINH" ColumnName="STTTINH" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="MATKHAU" ColumnName="MATKHAU" />
+                <ScalarProperty Name="TENNV" ColumnName="TENNV" />
+                <ScalarProperty Name="SODT" ColumnName="SODT" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="PHONGBAN" ColumnName="PHONGBAN" />
+                <ScalarProperty Name="SHBUUCUC" ColumnName="SHBUUCUC" />
+                <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+                <ScalarProperty Name="NGUOINHAP" ColumnName="NGUOINHAP" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+                <ScalarProperty Name="CHUCVU" ColumnName="CHUCVU" />
+                <ScalarProperty Name="NGAYNHAP" ColumnName="NGAYNHAP" />
+                <ScalarProperty Name="CMND" ColumnName="CMND" />
+                <ScalarProperty Name="SHINNHATAN" ColumnName="SHINNHATAN" />
+                <ScalarProperty Name="DAUMOI" ColumnName="DAUMOI" />
+                <ScalarProperty Name="DAUMOINB" ColumnName="DAUMOINB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tests">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.Test">
+              <MappingFragment StoreEntitySet="Test">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Names" ColumnName="Names" />
+                <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DM_MAU_QUYETDINH_BT">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.DM_MAU_QUYETDINH_BT">
+              <MappingFragment StoreEntitySet="DM_MAU_QUYETDINH_BT">
+                <ScalarProperty Name="MA" ColumnName="MA" />
+                <ScalarProperty Name="STTTINH" ColumnName="STTTINH" />
+                <ScalarProperty Name="DICH_VU" ColumnName="DICH_VU" />
+                <ScalarProperty Name="TRONG_NUOC" ColumnName="TRONG_NUOC" />
+                <ScalarProperty Name="TEN_BD1" ColumnName="TEN_BD1" />
+                <ScalarProperty Name="TEN_TP" ColumnName="TEN_TP" />
+                <ScalarProperty Name="DIEU_1" ColumnName="DIEU_1" />
+                <ScalarProperty Name="DIEU_2" ColumnName="DIEU_2" />
+                <ScalarProperty Name="TEN_TT" ColumnName="TEN_TT" />
+                <ScalarProperty Name="TEN_BD2" ColumnName="TEN_BD2" />
+                <ScalarProperty Name="MAU_BT" ColumnName="MAU_BT" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_RIGHTUSER">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.SYS_RIGHTUSER">
+              <MappingFragment StoreEntitySet="SYS_RIGHTUSER">
+                <ScalarProperty Name="MSQUYEN" ColumnName="MSQUYEN" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BCNGOAINUOCs">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.BCNGOAINUOC">
+              <MappingFragment StoreEntitySet="BCNGOAINUOC">
+                <ScalarProperty Name="TENCHIEU" ColumnName="TENCHIEU" />
+                <ScalarProperty Name="TEN_NUOC" ColumnName="TEN_NUOC" />
+                <ScalarProperty Name="MASO" ColumnName="MASO" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+                <ScalarProperty Name="IDC" ColumnName="IDC" />
+                <ScalarProperty Name="TENDICHVU" ColumnName="TENDICHVU" />
+                <ScalarProperty Name="IDDICHVU" ColumnName="IDDICHVU" />
+                <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+                <ScalarProperty Name="IDLYDO" ColumnName="IDLYDO" />
+                <ScalarProperty Name="LYDO" ColumnName="LYDO" />
+                <ScalarProperty Name="NGAYHOANTHANH" ColumnName="NGAYHOANTHANH" />
+                <ScalarProperty Name="MA_NUOC" ColumnName="MA_NUOC" />
+                <ScalarProperty Name="NGUOINHAP" ColumnName="NGUOINHAP" />
+                <ScalarProperty Name="BCNHANKN" ColumnName="BCNHANKN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BCTRONGNUOCs">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.BCTRONGNUOC">
+              <MappingFragment StoreEntitySet="BCTRONGNUOC">
+                <ScalarProperty Name="TENCHIEU" ColumnName="TENCHIEU" />
+                <ScalarProperty Name="TEN_NUOC" ColumnName="TEN_NUOC" />
+                <ScalarProperty Name="MASO" ColumnName="MASO" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+                <ScalarProperty Name="IDC" ColumnName="IDC" />
+                <ScalarProperty Name="TENDICHVU" ColumnName="TENDICHVU" />
+                <ScalarProperty Name="IDDICHVU" ColumnName="IDDICHVU" />
+                <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+                <ScalarProperty Name="IDLYDO" ColumnName="IDLYDO" />
+                <ScalarProperty Name="LYDO" ColumnName="LYDO" />
+                <ScalarProperty Name="NGAYHOANTHANH" ColumnName="NGAYHOANTHANH" />
+                <ScalarProperty Name="MA_NUOC" ColumnName="MA_NUOC" />
+                <ScalarProperty Name="BCNHANKN" ColumnName="BCNHANKN" />
+                <ScalarProperty Name="NGUOINHAP" ColumnName="NGUOINHAP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VIEW1">
+            <EntityTypeMapping TypeName="QL_KHIEUNAIModel.VIEW1">
+              <MappingFragment StoreEntitySet="VIEW1">
+                <ScalarProperty Name="MS_KHIEUNAI" ColumnName="MS_KHIEUNAI" />
+                <ScalarProperty Name="NGAYLAP" ColumnName="NGAYLAP" />
+                <ScalarProperty Name="SOHIEUBG" ColumnName="SOHIEUBG" />
+                <ScalarProperty Name="LYDO" ColumnName="LYDO" />
+                <ScalarProperty Name="TENCHIEU" ColumnName="TENCHIEU" />
+                <ScalarProperty Name="FILEDK" ColumnName="FILEDK" />
+                <ScalarProperty Name="TENNV" ColumnName="TENNV" />
+                <ScalarProperty Name="TENDICHVU" ColumnName="TENDICHVU" />
+                <ScalarProperty Name="MUCDO" ColumnName="MUCDO" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="NGUOIGOI" ColumnName="NGUOIGOI" />
+                <ScalarProperty Name="DCGOI" ColumnName="DCGOI" />
+                <ScalarProperty Name="NGUOINHAN" ColumnName="NGUOINHAN" />
+                <ScalarProperty Name="DCNHAN" ColumnName="DCNHAN" />
+                <ScalarProperty Name="BCGOI" ColumnName="BCGOI" />
+                <ScalarProperty Name="BCNHAN" ColumnName="BCNHAN" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="NGAYGOI" ColumnName="NGAYGOI" />
+                <ScalarProperty Name="KHOILUONG" ColumnName="KHOILUONG" />
+                <ScalarProperty Name="TRONGNUOC" ColumnName="TRONGNUOC" />
+                <ScalarProperty Name="NGUOIKN" ColumnName="NGUOIKN" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="DTFAX" ColumnName="DTFAX" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="LANKN" ColumnName="LANKN" />
+                <ScalarProperty Name="TINHNHAN" ColumnName="TINHNHAN" />
+                <ScalarProperty Name="NUOCNHAN" ColumnName="NUOCNHAN" />
+                <ScalarProperty Name="TINHGOI" ColumnName="TINHGOI" />
+                <ScalarProperty Name="NUOCGOI" ColumnName="NUOCGOI" />
+                <ScalarProperty Name="TENLH" ColumnName="TENLH" />
+                <ScalarProperty Name="CHK" ColumnName="CHK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="dt_addtosourcecontrol" FunctionName="QL_KHIEUNAIModel.Store.dt_addtosourcecontrol" />
+          <FunctionImportMapping FunctionImportName="dt_addtosourcecontrol_u" FunctionName="QL_KHIEUNAIModel.Store.dt_addtosourcecontrol_u" />
+          <FunctionImportMapping FunctionImportName="dt_adduserobject" FunctionName="QL_KHIEUNAIModel.Store.dt_adduserobject" />
+          <FunctionImportMapping FunctionImportName="dt_adduserobject_vcs" FunctionName="QL_KHIEUNAIModel.Store.dt_adduserobject_vcs" />
+          <FunctionImportMapping FunctionImportName="dt_checkinobject" FunctionName="QL_KHIEUNAIModel.Store.dt_checkinobject" />
+          <FunctionImportMapping FunctionImportName="dt_checkinobject_u" FunctionName="QL_KHIEUNAIModel.Store.dt_checkinobject_u" />
+          <FunctionImportMapping FunctionImportName="dt_checkoutobject" FunctionName="QL_KHIEUNAIModel.Store.dt_checkoutobject" />
+          <FunctionImportMapping FunctionImportName="dt_checkoutobject_u" FunctionName="QL_KHIEUNAIModel.Store.dt_checkoutobject_u" />
+          <FunctionImportMapping FunctionImportName="dt_displayoaerror" FunctionName="QL_KHIEUNAIModel.Store.dt_displayoaerror" />
+          <FunctionImportMapping FunctionImportName="dt_displayoaerror_u" FunctionName="QL_KHIEUNAIModel.Store.dt_displayoaerror_u" />
+          <FunctionImportMapping FunctionImportName="dt_droppropertiesbyid" FunctionName="QL_KHIEUNAIModel.Store.dt_droppropertiesbyid" />
+          <FunctionImportMapping FunctionImportName="dt_dropuserobjectbyid" FunctionName="QL_KHIEUNAIModel.Store.dt_dropuserobjectbyid" />
+          <FunctionImportMapping FunctionImportName="dt_generateansiname" FunctionName="QL_KHIEUNAIModel.Store.dt_generateansiname" />
+          <FunctionImportMapping FunctionImportName="dt_getobjwithprop" FunctionName="QL_KHIEUNAIModel.Store.dt_getobjwithprop" />
+          <FunctionImportMapping FunctionImportName="dt_getobjwithprop_u" FunctionName="QL_KHIEUNAIModel.Store.dt_getobjwithprop_u" />
+          <FunctionImportMapping FunctionImportName="dt_getpropertiesbyid" FunctionName="QL_KHIEUNAIModel.Store.dt_getpropertiesbyid">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QL_KHIEUNAIModel.dt_getpropertiesbyid_Result">
+                <ScalarProperty Name="property" ColumnName="property" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="dt_getpropertiesbyid_u" FunctionName="QL_KHIEUNAIModel.Store.dt_getpropertiesbyid_u">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QL_KHIEUNAIModel.dt_getpropertiesbyid_u_Result">
+                <ScalarProperty Name="property" ColumnName="property" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+                <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="dt_getpropertiesbyid_vcs" FunctionName="QL_KHIEUNAIModel.Store.dt_getpropertiesbyid_vcs" />
+          <FunctionImportMapping FunctionImportName="dt_getpropertiesbyid_vcs_u" FunctionName="QL_KHIEUNAIModel.Store.dt_getpropertiesbyid_vcs_u" />
+          <FunctionImportMapping FunctionImportName="dt_isundersourcecontrol" FunctionName="QL_KHIEUNAIModel.Store.dt_isundersourcecontrol" />
+          <FunctionImportMapping FunctionImportName="dt_isundersourcecontrol_u" FunctionName="QL_KHIEUNAIModel.Store.dt_isundersourcecontrol_u" />
+          <FunctionImportMapping FunctionImportName="dt_removefromsourcecontrol" FunctionName="QL_KHIEUNAIModel.Store.dt_removefromsourcecontrol" />
+          <FunctionImportMapping FunctionImportName="dt_setpropertybyid" FunctionName="QL_KHIEUNAIModel.Store.dt_setpropertybyid" />
+          <FunctionImportMapping FunctionImportName="dt_setpropertybyid_u" FunctionName="QL_KHIEUNAIModel.Store.dt_setpropertybyid_u" />
+          <FunctionImportMapping FunctionImportName="dt_validateloginparams" FunctionName="QL_KHIEUNAIModel.Store.dt_validateloginparams" />
+          <FunctionImportMapping FunctionImportName="dt_validateloginparams_u" FunctionName="QL_KHIEUNAIModel.Store.dt_validateloginparams_u" />
+          <FunctionImportMapping FunctionImportName="dt_vcsenabled" FunctionName="QL_KHIEUNAIModel.Store.dt_vcsenabled" />
+          <FunctionImportMapping FunctionImportName="dt_verstamp006" FunctionName="QL_KHIEUNAIModel.Store.dt_verstamp006" />
+          <FunctionImportMapping FunctionImportName="dt_verstamp007" FunctionName="QL_KHIEUNAIModel.Store.dt_verstamp007" />
+          <FunctionImportMapping FunctionImportName="dt_whocheckedout" FunctionName="QL_KHIEUNAIModel.Store.dt_whocheckedout" />
+          <FunctionImportMapping FunctionImportName="dt_whocheckedout_u" FunctionName="QL_KHIEUNAIModel.Store.dt_whocheckedout_u" />
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="QL_KHIEUNAIModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="QL_KHIEUNAIModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="QL_KHIEUNAIModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="QL_KHIEUNAIModel.Store.sp_helpdiagramdefinition" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="QL_KHIEUNAIModel.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="QL_KHIEUNAIModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="QL_KHIEUNAIModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="TK_KN_BT_BCCP_CHUNG" FunctionName="QL_KHIEUNAIModel.Store.TK_KN_BT_BCCP_CHUNG">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QL_KHIEUNAIModel.TK_KN_BT_BCCP_CHUNG_Result">
+                <ScalarProperty Name="SL_TN" ColumnName="SL_TN" />
+                <ScalarProperty Name="TIENBT_TN" ColumnName="TIENBT_TN" />
+                <ScalarProperty Name="SL_QT" ColumnName="SL_QT" />
+                <ScalarProperty Name="TIENBT_QT" ColumnName="TIENBT_QT" />
+                <ScalarProperty Name="LOAIDV" ColumnName="LOAIDV" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TK_KN_BT_BCCP_DONVI" FunctionName="QL_KHIEUNAIModel.Store.TK_KN_BT_BCCP_DONVI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QL_KHIEUNAIModel.TK_KN_BT_BCCP_DONVI_Result">
+                <ScalarProperty Name="SL_TN" ColumnName="SL_TN" />
+                <ScalarProperty Name="TIENBT_TN" ColumnName="TIENBT_TN" />
+                <ScalarProperty Name="SL_QT" ColumnName="SL_QT" />
+                <ScalarProperty Name="TIENBT_QT" ColumnName="TIENBT_QT" />
+                <ScalarProperty Name="LOAIDV" ColumnName="LOAIDV" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TK_KN_CAC_DV_BCCP" FunctionName="QL_KHIEUNAIModel.Store.TK_KN_CAC_DV_BCCP">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QL_KHIEUNAIModel.TK_KN_CAC_DV_BCCP_Result">
+                <ScalarProperty Name="SL_TN_CS" ColumnName="SL_TN_CS" />
+                <ScalarProperty Name="SL_QT_CS" ColumnName="SL_QT_CS" />
+                <ScalarProperty Name="SL_TN_PS" ColumnName="SL_TN_PS" />
+                <ScalarProperty Name="SL_QT_PS" ColumnName="SL_QT_PS" />
+                <ScalarProperty Name="SL_TN_GQ" ColumnName="SL_TN_GQ" />
+                <ScalarProperty Name="SL_QT_GQ" ColumnName="SL_QT_GQ" />
+                <ScalarProperty Name="SL_TN_CL" ColumnName="SL_TN_CL" />
+                <ScalarProperty Name="SL_QT_CL" ColumnName="SL_QT_CL" />
+                <ScalarProperty Name="LOAIDV" ColumnName="LOAIDV" />
+                <ScalarProperty Name="LYDOKN" ColumnName="LYDOKN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

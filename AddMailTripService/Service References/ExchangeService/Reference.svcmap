@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1d4e00c0-685a-48da-a484-013e08b84190" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://bccp-dt.vnpost.vn:1019/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DeliveryDataSet.xsd" MetadataType="Schema" ID="58982be4-182f-4fde-979c-062e46901095" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd22" />
+    <MetadataFile FileName="TraceItemDataSet.xsd" MetadataType="Schema" ID="c2b4ea8d-b9df-46ef-b373-613ac1fd8d75" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd11" />
+    <MetadataFile FileName="ValueAddedServiceDataSet.xsd" MetadataType="Schema" ID="6a2fbe94-4bc2-49f9-bbb4-c0a292594cd0" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd18" />
+    <MetadataFile FileName="POSDataSet.xsd" MetadataType="Schema" ID="b9a64eb2-5a98-4f82-ae48-0ca6e5c1b668" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd13" />
+    <MetadataFile FileName="ExchangeService.wsdl" MetadataType="Wsdl" ID="fd81c6e6-e195-47cd-b3c9-f47ffeb2b7c5" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?wsdl" />
+    <MetadataFile FileName="RevenueDataSet.xsd" MetadataType="Schema" ID="348c4cf1-7827-4ec8-982a-6e9476b507c5" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd23" />
+    <MetadataFile FileName="TracePostBagDataSet.xsd" MetadataType="Schema" ID="1532642d-e2cd-4f65-b36c-88ad2c309a06" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd12" />
+    <MetadataFile FileName="BD29DataSet.xsd" MetadataType="Schema" ID="1230a615-39c4-43bf-8077-2647f6023bab" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd7" />
+    <MetadataFile FileName="CommodityTypeDataSet.xsd" MetadataType="Schema" ID="a9749f48-9a0d-45a9-982d-2223f99aad68" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd19" />
+    <MetadataFile FileName="MailTripTransportDataSet.xsd" MetadataType="Schema" ID="6a6e3f78-2345-4772-be7b-a2d8af4d1fd7" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd8" />
+    <MetadataFile FileName="BC37DataSet.xsd" MetadataType="Schema" ID="b6f4128d-b44a-4d84-bf6d-f3505abb66b3" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd9" />
+    <MetadataFile FileName="UnitDataSet.xsd" MetadataType="Schema" ID="ff2624f1-cc0a-472f-a492-8f1c4c32fc8f" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd14" />
+    <MetadataFile FileName="ItemDataSet.xsd" MetadataType="Schema" ID="3770560b-72c0-4308-bb45-09d746fa9b66" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd24" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="3f671c25-e16d-4f10-a68c-7cb21fb920f4" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd3" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="a361447f-bbe1-4220-93b8-724bb8de3228" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd4" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="c6a8bfd9-3bef-4cfe-b7a4-8a18719949e1" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd5" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="462a2b20-da7a-44f4-b5d8-1e5464cfd1df" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd6" />
+    <MetadataFile FileName="MailRouteDataSet.xsd" MetadataType="Schema" ID="91d22331-148f-4a40-b0db-48ddd70a6a05" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd15" />
+    <MetadataFile FileName="BatchDataSet.xsd" MetadataType="Schema" ID="e3a0bb2c-082b-4cb8-9760-fe92f491cbbc" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd25" />
+    <MetadataFile FileName="DomesticFreightRuleDataSet.xsd" MetadataType="Schema" ID="269faa04-8dc1-46a2-9d5d-8fc33782b620" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd20" />
+    <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="12990302-1e99-44e5-80e0-90189477ec4a" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?wsdl=wsdl0" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="84999bc9-63fa-4095-a9f4-2b2bd8c38852" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd0" />
+    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="1abaccbf-f92a-492c-83ce-4d5eaae37962" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd1" />
+    <MetadataFile FileName="PayPostDataSet.xsd" MetadataType="Schema" ID="17b195de-4485-461b-8128-81e4325abbe8" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd2" />
+    <MetadataFile FileName="DeliveryRouteDataSet.xsd" MetadataType="Schema" ID="f2e88771-b4b7-4e3a-b5d2-3ca7e3a62082" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd16" />
+    <MetadataFile FileName="MailTripDataSet.xsd" MetadataType="Schema" ID="7a0b3948-c3b2-4bba-b75b-8bf39b099bba" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd26" />
+    <MetadataFile FileName="InternationalFreightRuleDataSet.xsd" MetadataType="Schema" ID="caafe50d-7656-424f-8887-ea285545a121" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd21" />
+    <MetadataFile FileName="CODDataSet.xsd" MetadataType="Schema" ID="2d232ec8-60c7-4758-bef9-162254284b81" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd10" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="07c7b741-b99b-4581-b7f6-ac4ba24a8641" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?disco" />
+    <MetadataFile FileName="ItemTypeDataSet.xsd" MetadataType="Schema" ID="847891c9-69e6-4e74-880f-ec584a34e87d" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd17" />
+    <MetadataFile FileName="MailTripListDataSet.xsd" MetadataType="Schema" ID="f854447b-ff80-49d0-9584-437a8bba3264" SourceId="1" SourceUrl="http://bccp-dt.vnpost.vn:1019/?xsd=xsd27" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

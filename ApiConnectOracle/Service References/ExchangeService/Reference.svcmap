@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="798e4811-5fc4-4fd1-a400-609b57aabfcb" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://123.30.11.218:1016/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BD29DataSet.xsd" MetadataType="Schema" ID="6d4a797d-bd72-496d-8683-21681eafac98" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd7" />
+    <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="41179d74-2a0e-4875-88f5-414765b7401d" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd4" />
+    <MetadataFile FileName="MailRouteDataSet.xsd" MetadataType="Schema" ID="5026f5a5-4b56-48ed-988e-9228bdc213c5" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd15" />
+    <MetadataFile FileName="MailTripTransportDataSet.xsd" MetadataType="Schema" ID="06566dc5-6a1b-4271-8a48-c3c45cc64e5d" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd8" />
+    <MetadataFile FileName="ValueAddedServiceDataSet.xsd" MetadataType="Schema" ID="ac2b5bb3-0b23-468b-be83-58cc23af3c18" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd18" />
+    <MetadataFile FileName="DomesticFreightRuleDataSet.xsd" MetadataType="Schema" ID="b3b9aa25-84b6-421b-ba28-165156ea24d1" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd20" />
+    <MetadataFile FileName="BatchDataSet.xsd" MetadataType="Schema" ID="2a26d2b6-f53e-4f90-b9d0-4549b63b9fc5" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd25" />
+    <MetadataFile FileName="UnitDataSet.xsd" MetadataType="Schema" ID="16461821-9129-4fea-b7ac-71e17a1ad212" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd14" />
+    <MetadataFile FileName="item.disco" MetadataType="Disco" ID="f13b50e8-25f0-4d63-94ff-9708a3aa4037" SourceId="1" SourceUrl="http://123.30.11.218:1016/?disco" />
+    <MetadataFile FileName="ItemDataSet.xsd" MetadataType="Schema" ID="506a9025-42eb-488e-b52f-65dd8366be5a" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd24" />
+    <MetadataFile FileName="ItemTypeDataSet.xsd" MetadataType="Schema" ID="8a0c0dcc-ebcf-4a64-a839-e1725ec3eb47" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd17" />
+    <MetadataFile FileName="InternationalFreightRuleDataSet.xsd" MetadataType="Schema" ID="435e4ac8-c437-48df-9d23-353b9485f8cb" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd21" />
+    <MetadataFile FileName="TraceItemDataSet.xsd" MetadataType="Schema" ID="81b62ecd-7c3a-468d-b741-146c48246354" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd11" />
+    <MetadataFile FileName="item.wsdl" MetadataType="Wsdl" ID="316e6cf0-8b21-435f-8858-faf11bc6018d" SourceId="1" SourceUrl="http://123.30.11.218:1016/?wsdl=wsdl0" />
+    <MetadataFile FileName="ExchangeService.wsdl" MetadataType="Wsdl" ID="03d37b68-cf5d-4965-aec5-ba8075b834ae" SourceId="1" SourceUrl="http://123.30.11.218:1016/?wsdl" />
+    <MetadataFile FileName="DeliveryRouteDataSet.xsd" MetadataType="Schema" ID="aaca0541-e64f-4fc9-a827-c4b1f53746f7" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd16" />
+    <MetadataFile FileName="MailTripListDataSet.xsd" MetadataType="Schema" ID="fd553fad-6be6-4a90-ac67-07d25440e99e" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd27" />
+    <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="e5366356-7844-4999-9cf4-ba8d3d2cc0fa" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd1" />
+    <MetadataFile FileName="POSDataSet.xsd" MetadataType="Schema" ID="57789103-b01c-4b8c-acf3-60234e998648" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd13" />
+    <MetadataFile FileName="DeliveryDataSet.xsd" MetadataType="Schema" ID="4c643817-1242-4e2c-8ec5-7404a1f919c1" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd22" />
+    <MetadataFile FileName="CODDataSet.xsd" MetadataType="Schema" ID="79cfe563-e4b8-4c3a-8e9e-b3a08d1c01d8" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd10" />
+    <MetadataFile FileName="MailTripDataSet.xsd" MetadataType="Schema" ID="037e90fc-2a96-4662-b9b2-60d317bd44d0" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd26" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="d71ab5e3-3b6c-432f-af90-d0a84a2ae79d" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd5" />
+    <MetadataFile FileName="PayPostDataSet.xsd" MetadataType="Schema" ID="8d1c7116-b9d2-4ece-930b-4dec7b7d15e9" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd2" />
+    <MetadataFile FileName="RevenueDataSet.xsd" MetadataType="Schema" ID="8a710888-d0d1-469a-97a0-461e95b1f2a8" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd23" />
+    <MetadataFile FileName="item3.xsd" MetadataType="Schema" ID="d17c44f2-0dcf-48b1-a3e6-24d7cd8c3d3c" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd3" />
+    <MetadataFile FileName="TracePostBagDataSet.xsd" MetadataType="Schema" ID="ba93e18f-9667-4462-9de6-4d675ae16f59" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd12" />
+    <MetadataFile FileName="item4.xsd" MetadataType="Schema" ID="65f2a435-d8f0-475a-8148-498c6cac5a20" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd0" />
+    <MetadataFile FileName="BC37DataSet.xsd" MetadataType="Schema" ID="d15a5709-ca4f-4515-9dae-699df5d04dc2" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd9" />
+    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="aa5c58a3-924d-43ee-9cdb-9262bb64495b" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd6" />
+    <MetadataFile FileName="CommodityTypeDataSet.xsd" MetadataType="Schema" ID="63cf1d98-f8c7-4aac-be85-650cfb0ee384" SourceId="1" SourceUrl="http://123.30.11.218:1016/?xsd=xsd19" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

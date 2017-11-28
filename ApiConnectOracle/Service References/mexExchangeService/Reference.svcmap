@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="25fbc5d3-0bce-4829-ab7e-89c8333c06c4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="bc45d0db-70f1-4ed6-9e4a-f9150b7de6e2" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="Ctin.Css.ExchangeService.wsdl" MetadataType="Wsdl" ID="6c9b732b-060b-4157-9882-f28d58b87349" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="e82760ae-e774-47b0-9e38-7841af851a21" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="17e9f28c-7296-45aa-8f1b-5ff45e6fcac1" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="PayPostDataSet.xsd" MetadataType="Schema" ID="4aec599f-75a6-4a5f-b643-b92fcabd0acd" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="602acdf4-554a-48b5-ace5-9cf152bc20b9" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="System.Data.xsd" MetadataType="Schema" ID="c6ac097a-7ded-4abd-a827-c27bbdf0063b" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="Ctin.Oe.DAO.xsd" MetadataType="Schema" ID="23778a95-8336-4aa5-abb6-cf0e3b2d3740" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="ad5f4a42-6924-41f9-917b-04e881a0ce75" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="BD29DataSet.xsd" MetadataType="Schema" ID="b1abe79b-bf8d-4586-b99a-5dbf6702e1da" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="MailTripTransportDataSet.xsd" MetadataType="Schema" ID="f2bcf4c8-3987-48ad-beba-a2073bc91dd7" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="BC37DataSet.xsd" MetadataType="Schema" ID="67c5aa98-bdf1-4fb7-aed1-367357b0de2e" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="CODDataSet.xsd" MetadataType="Schema" ID="a599dc38-6eaf-4951-ba47-688ff9083ebc" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="TraceItemDataSet.xsd" MetadataType="Schema" ID="a455f6bb-f84a-4a47-bf75-35aa134faf9f" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="TracePostBagDataSet.xsd" MetadataType="Schema" ID="a34ef269-ced4-43bc-8c2e-85bf5412f7b4" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="POSDataSet.xsd" MetadataType="Schema" ID="539e7961-c97c-49b7-a97b-ec480c29fd28" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="UnitDataSet.xsd" MetadataType="Schema" ID="d0561c06-9ec3-4c37-886a-a18d3b6a0524" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="MailRouteDataSet.xsd" MetadataType="Schema" ID="ed2e5328-d183-493c-b50e-16761fca55dd" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="DeliveryRouteDataSet.xsd" MetadataType="Schema" ID="798e1a1d-2bbd-43e4-b4ec-8d2ead04e38c" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="ItemTypeDataSet.xsd" MetadataType="Schema" ID="a4b22ff6-d57b-419a-84f7-ba8632be6421" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="ValueAddedServiceDataSet.xsd" MetadataType="Schema" ID="308f2921-9500-4eed-9fcd-ed6bdc39becf" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="CommodityTypeDataSet.xsd" MetadataType="Schema" ID="6e4f4226-5592-452a-a18e-84efd537a4bd" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="DomesticFreightRuleDataSet.xsd" MetadataType="Schema" ID="fd183257-5531-4065-a578-560ef6249561" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="InternationalFreightRuleDataSet.xsd" MetadataType="Schema" ID="d02b247f-d629-4679-92a8-d78e63c66a00" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="DeliveryDataSet.xsd" MetadataType="Schema" ID="9636f473-6a7f-4d64-9062-901a8bb36659" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="RevenueDataSet.xsd" MetadataType="Schema" ID="7c06b12c-ed4f-4b97-b519-d8b2c2c46248" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="ItemDataSet.xsd" MetadataType="Schema" ID="7df4dda0-677a-4bee-8699-b31cc650f9c9" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="BatchDataSet.xsd" MetadataType="Schema" ID="da15e71b-e5a0-4f03-a42d-d3e820ef1327" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="MailTripDataSet.xsd" MetadataType="Schema" ID="4b9c142e-3780-4932-9e1a-2d1f1df82736" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+    <MetadataFile FileName="MailTripListDataSet.xsd" MetadataType="Schema" ID="0471303d-7ed6-4e9c-88b9-46caba45766a" SourceId="1" SourceUrl="net.tcp://bccp-dt.vnpost.vn:1018/mexExchangeService" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
